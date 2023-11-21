@@ -1,0 +1,37 @@
+COMPSCI 250 Fall 2023: Solutions to Discussion #7
+
+public int size( ) 
+{// returns number of nodes in calling expression's tree
+   if (getIsLeaf( )) return 1;
+   if (getOperator( ) == NOT) return 1 + getLeft( ).size( );
+   return 1 + getLeft( ).size( ) + getRight.size( );}
+
+public int leaves( ) 
+{// returns number of leaves in calling expression's tree
+   if (getIsLeaf( )) return 1;
+   if (getOperator( ) == NOT) return getLeft( ).leaves( );
+   return getLeft( ).leaves( ) + getRight.leaves( );}
+
+public int depth( ) 
+{// returns depth of calling expression's tree
+   if (getIsLeaf( )) return 0;
+   if (getOperator( ) == NOT) return 1 + getLeft( ).depth( );
+   if (getLeft( ).depth( ) > getRight( ).depth( ))
+      return 1 + getLeft( ).depth( );
+   return 1 + getRight( ).depth( );}
+
+public boolean eval( ) 
+{// returns number of nodes in calling expression's tree
+   if (getIsLeaf( )) return getLeafValue( );
+   if (getOperator( ) == NOT) return !getLeft( ).eval( );
+   if (getOperator( ) == AND) return getLeft( ).eval( ) && getRight( ).eval( );
+   return getLeft( ).eval( ) || getRight( ).eval( );}
+
+public String toString( ) 
+{// returns number of nodes in calling expression's tree
+   if (getIsLeaf( )) return Boolean(getLeafValue( )).toString( );
+   if (getOperator( ) == NOT) return "NOT " + getLeft( ).toString( );
+   if (getOperator( ) == AND) return 
+       "(" + getLeft( ).toString( ) + " AND " + getRight( ).toString( ) + ")";
+   return 
+       "(" + getLeft( ).toString( ) + " OR " + getRight( ).toString( ) + ")";}

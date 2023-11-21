@@ -1,0 +1,117 @@
+COMPSCI 250 Fall 2023: Solutions to Discussion #6
+
+(a) Let P(n) be “F(n) and F(n+1) are relatively prime”.
+
+Base: F(1) = 1, F(2) = 1, 1 and 1 are relatively prime.
+
+Inductive step: P(n) —> P(n+1).  I have three proofs of the IS. 
+
+Proof 1: Here we choose to prove (not P(n+1)) —> (not P(n)).
+If F(n+1) and F(n+2) are not relatively prime, then some natural
+g with g > 1 divides both F(n+1) and F(n+2).  But then g also 
+divided F(n+2) - F(n+1) = F(n), so it divides both F(n) and
+F(n+1) and P(n) is false.
+
+Proof 2: Assume that the EA goes to 1 on inputs F(n+1) and F(n).
+(We know that this happens if and only if those numbers are 
+relatively prime.)  Run the EA on inputs F(n+2) and F(n+1).  The 
+first remainder F(n+2) % F(n+1) is F(n), so the second step of 
+this run of the EA has inputs F(n+1) and F(n), and thus goes to
+1 by the EH.  So P(n+1) is true.
+
+Proof 3: The Inverse Theorem says that x has an inverse mod y if
+and only if x and y are relatively prime.  So the IH says that F(n)
+has an inverse mod F(n+1) and vice versa.  But modulo F(n+1), F(n+2)
+is congruent to F(n), since F(n) = F(n+2) - F(n+1).  So either both
+F(n) and F(n+2) have inverses modulo F(n+1), or neither do.  The IH
+says it is both, which by the Inverse Theorem again tells us that
+P(n+1) is true.
+
+
+
+(b) For the base case of n = 0, removing a point triangle from a
+triangle of side 1 leaves an empty figure, which can be tiled with
+0 trapezoids.
+
+For the inductive case, we assume that any triangle of side 2^n, with
+one point triangle missing, can be tiled with trapezoids.  Again I 
+have three proofs of the inductive step.
+
+Proof 1 (the intended one): Take any triangle of side 2^{n+1} with
+one point triangle missing.  Place a single trapezoid with its longest
+side centered on the side of the big triangle opposite the missing point.
+Draw a triangle connecting the three midpoints of the sides of the original
+big triangle, thus dividing this triangle into four triangles of side 2^n.
+One of these contains the point taken from the big triangle, and the other
+three each contain one of the small triangles of the trapezoid.  This means
+that all four can be tiled with trapezoids, by the IH, and combining these
+tilings with the single trapezoid tiles the original figure.
+
+Proof 2:  Orient the missing point at the top, and draw a horizontal 
+line halfway up the original triangle to divide it into a triangle of 
+side 2^n with one point missing, and a trapezoid with shorter side 2^n.
+The former can be tiled by the IH.  By a separate induction, we can show
+that any trapezoid similar to our size-3 ties, but with shorter side 2^k
+for any natural k, can be tiled with size-3 trapezoids.  The base case of 
+size 2^0 is obvious as we are tiling the figure with one copy of itself.
+For the induction, note that a trapezoid of side 2^{n+1} can be divided 
+into four trapezoids of side 2^n as follows (ASCII art requires a constant-width
+font):
+
+________
+\ \__/ /
+ \/__\/
+
+Proof 3:  Place one size-3 trapezoid next to the missing point, to make 
+a side 2^{n+1} triangle missing a point triangle of side 2.  This figure is 
+a double-sized copy of a triangle of side 2^n with an ordinary missing point
+of side 1.  By the IH, it can be tiled by double-sized trapezoids (of size 12).
+Each of these trapezoids may be tiled with four size-3 trapezoids as per the
+figure above.
+
+
+
+(c) P(n) = “Any rectangle with n total lines and circles may be 2-colored”.
+
+Base: Making the rectangle either color suffices.
+
+Given a rectangle with n+1 circles and lines, consider the figure made by
+the first n circles and lines.  By the IH, this can be two-colored.  Add
+the last circle or line to it, which divides some of the regions into two.
+Pick one side of the circle or line, and reverse the colors of all the regions
+on that side.  We claim that the result is a valid two-coloring of the new
+figure.  To prove this, let R and S be arbitrary regions of the new figure 
+that share a border.  If they shared a border before, they were on the same 
+side of the new line or circle and so were both reversed or both unchanged.
+By the IH they had different colors before, so they still have different 
+colors.  If they did not share a border before, their border was created by 
+the new line or circle, so they are on opposite sides and one was reversed
+and the other wasn’t.  So either way, they have opposite colors now.  Since
+R and S were arbitrary, every such pair of regions has opposite colors and
+the new coloring is a valid 2-coloring.
+
+
+
+(d) P(n) = “Any tournament graph with n nodes has a Hamilton path”, where
+“tournament graph” means a directed graph where each pair of distinct 
+vertices has an arc from one to the other but not both. and a “Hamilton
+path” is a path from some vertex to some other vertex that includes each
+vertex exactly once.
+
+Base: n = 2, there is an edge from one vertex to the other, and this is the 
+desired path.
+
+Induction: Consider an arbitrary tournament graph with n+1 vertices.
+Let x be one of the vertices, and let a_1,…, a_n be the other vertices in
+the order of the path that we know to exist by the IH. For each i, x has an
+edge to a_i or from a_i but not both.
+
+Case 1: x has an edge to a_1.  We add x as the new first vertex of the path.
+
+Case 2: x has an edge from a_n.  We add x as the new last vertex.
+
+Case 3: There is some i such that x has an edge from a_i and an edge to a_{i+1}.
+(This must happen if there is an edge from a_1 and an edge to a_n.)  In this
+case we insert x into the path between a_i and a_{i+1}.
+
+

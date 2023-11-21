@@ -1,0 +1,93 @@
+COMPSCI 250 Fall 2023 Discussion #3 Solutions
+
+1) Goal is to prove that h is onto, which means:
+
+for all z: exists x: h(x) = z
+
+We let c be an arbitrary element of Z.
+
+Since g is onto, we have:
+
+for all z: exists y: g(y) = z
+
+which by Specification gives us
+
+exists y: g(y) = c
+
+We instantiate b as the element of Y given, so we get
+
+g(b) = c
+
+Now since f is onto, we have
+
+for all y: exists x: f(x) = y
+
+We specify this to y = b to get
+
+exists x: f(x) = b
+
+and instantiate x as a to get 
+
+f(a) = b.
+
+Now since f(a) = b and g(b) = c, we have h(a) = c.
+
+By Existence, exists x: h(x) = c.
+
+Since c was arbitrary, we have for all z: exists x: h(x) = z as desired.
+
+
+
+2) We want to prove 
+
+for all x: R(x, x), 
+
+so we let a be an arbitrary element of type A.
+
+By the additional premise, specifying to a, we have
+
+exists y: R(a, y)
+
+Instantiating y to b gives us R(a, b).
+
+Specifying the symmetric property to a and b gives us
+
+R(a, b) --> R(b, a)
+
+Specifying the transitive property to x = a, y = b, z = a gives
+
+(R(a, b) and R(b, a)) --> R(a, a)
+
+By Modus Ponens twice we get R(a, a) for our arbitrary a,
+completing our generalization.
+
+
+3) We want to prove:
+
+forall x forall y: (T(x, y) and T(y, x)) --> (x = y)
+
+Let a and b be arbitrary elements of A and assume "T(a, b) and T(b, a)".
+
+Specifying the definition of T to a and b, then to b and a, gives us
+
+T(a, b) <--> (R(a, b) and S(a, b)
+T(b, a) <--> (R(b, a) and S(b, a)
+
+Substitution gives us 
+
+R(a, b) and S(a, b) and R(b, a) and S(b, a)
+
+Commutativity and separation gives us
+
+R(a, b) and R(b, a).
+
+By specifying the antisymmetry of R to a and b we get
+
+(R(a, b) and R(b, a)) --> (a = b)
+
+So Modus Ponens gets us a = b.  Since we proved this 
+from the assumption "T(a, b) and T(b, a)", we have
+proved the desired implication for a and b, and since
+a and b were arbitrary we have proved the desired quantified 
+statement.
+

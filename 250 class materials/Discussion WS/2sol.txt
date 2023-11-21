@@ -1,0 +1,84 @@
+COMPSCI 250 Fall 2023 Discussion #2 Solutions:
+
+Question 1: Premises are:
+
+(I) c --> p
+(II) p --> not (b or c)
+(III) (not b) --> (p and k)
+(IV) (not c) --> (b and not k)
+
+Assume c.		for Proof by Cases
+p			MP, I
+not (b or c)		MP, II
+not b and not c		DeMorgan
+not c			Right Separation
+c and not c		Conjunction with line 1
+0			Excluded middle (plus DeMorgan)
+
+Since we derived 0 from c, c must be false
+
+not c			Conclusion of Proof by Contradiction
+b and not k		MP, IV
+(b or c) --> not p	Contrapositive of II
+b or c			Separation from "b and not k", joining
+not p			MP from above
+b and not c and not k and not p
+			Conjunction
+
+I, II, III are satisfied vacuously, IV is satisfied trivially.
+
+
+
+Question 2: Premises are:
+
+(I) c --> (k and m)
+(II) (not p or s) --> (b or c)
+(III) (p and c) --> not m
+(IV) (not s) --> (p or not k)
+(V) b --> (not k and not p)
+(VI) not (s and k) --> c
+
+Assume c.		for Proof by Cases
+k and m			MP, 1
+m			Right separation
+m --> not(p and c)	Contrapositive of III
+not(p and c)		MP
+not p or not c		DeMorgan
+c --> not p		Definition of Implication
+not p			MP
+not p and k		Conjunction
+not (p or not k)	DeMorgan
+not (p or not k) --> s  Contrapositive of IV
+s			MP
+k			separation from line 2
+k or p			joining
+not (not k and not p)   DeMorgan
+not (not k and not p) --> not b
+			Contrapositive of V
+not b			MP
+not b and c and k and m and not p and s
+			Conjunction
+
+I and II satisfied trivially, III, IV, V, VI vacuously.
+
+It remains to check the case of "not c"
+
+not c			for Proof by Cases
+not c --> (s and k)	Contrapositive of VI
+s and k			MP
+s			separation
+not p or s		joining
+b or c			MP from II
+not c --> b		Definition of Implication
+b			MP
+(not k and not p)	MP from V
+not k			separation
+k			separation from line 3 of this case
+k and not k		conjunction
+0			excluded middle
+
+Since "not c" leads to a contradiction, c must be true, and the solution
+found in the c case is the only possible solution.
+
+
+

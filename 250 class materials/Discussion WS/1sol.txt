@@ -1,0 +1,33 @@
+COMPSCI 250 Fall 2023
+Solutions to Discussion Assignment #1
+David Mix Barrington and Ghazaleh Parvini
+
+1. Let x be even.  By definition, x = 2y for some y.  If x != 0, then 
+x - 1 = 2y - 1 = 2(y - 1) + 1.  (The natural y - 1 exists because y != 0, as if 
+y = 0 were true x would also be 0.)  So x - 1 is one greater than double a 
+natural, and so by definition is odd.
+
+2. Let x be odd.  By definition, x = 2y + 1 for some y.  So x - 1 = 2y
+and is even by the definition.
+
+3. Let x - 1 be odd.  By definition, x - 1 = 2y + 1 for some y.  So x =
+2y + 2 = 2(y + 1) and is even by definition.
+
+4. Let x - 1 be even.  By definition, x - 1 = 2y for some y.  So x = 
+2y + 1 and is odd by definition.
+
+5. Assume that there exists a number that is neither even nor odd.  By the
+Least Number Axiom, let z be the smallest number that is neither even nor 
+odd.  It is not possible that z = 0, since 0 = 2(0) is even.   So z must
+have a predecessor z - 1.  This z - 1 cannot be even, since then z would have
+to be odd, and it isn't.  Similarly z - 1 cannot be odd, since then z would
+have to be even, and it isn't.  This means that z - 1 is neither even nor 
+odd, which is a contradiction because z is supposed to be the smallest number
+that is neither even nor odd.  The assumption leads to a contradiction and so
+must be false.
+
+6.  Again assume that some number is both even and odd, and let z be the 
+smallest such number.  Again z cannot be 0, because 0 is not odd (it cannot
+be equal to 2y + 1 for any _natural_ y).  So z has a predecessor z - 1.  Then
+z - 1 is even because z is odd, and it is odd because z is even.  It is thus
+both even and odd, contradicting the assumption that z is the least such number.

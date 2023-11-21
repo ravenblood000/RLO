@@ -1,0 +1,42 @@
+COMPSCI 250 Fall 2023: Solution to Discussion #4
+
+Our first task was to prove the following, where S’s type is 
+“finite set of naturals” and the other variables type is “natural”:
+
+forall S: (forall x: (x in S) —> P(x)) —> (exists y: P(y) and (y not in S))
+
+Using Generalization, we begin by saying “Let S be an arbitrary finite
+set of naturals” and assume that the premise is true, so that all the 
+elements of S are primes.
+
+Let m be the product of all the elements of S.  Then let z = m + 1.  If
+p is any element of S, clearly p divides m and so z % p = 1 and (since p
+cannot be 1), p does not divide z.
+
+But z, like any natural, has a prime factor — let y be one of them.  We
+have that P(y) is true, and y cannot be in S because it divides z and the 
+elements of S don’t.
+
+So by Existence we get “exists y: P(y) and (y not in S)” and we have completed
+the Generalization argument for the desired statement.
+
+
+Now we turn to the second task, where again we let S be an arbitrary finite
+set of naturals and this time assume that all the elements of S are primes
+that are congruent to 3, mod 4.  Again let m be the product of all the elements
+of S.
+
+We don’t know whether there are an even number of elements in S, in which case
+m = 1 (mod 4), or an odd number of them, in which case m = 3 (mod 4).  We proceed
+by cases.  In the first case, we let z = m + 2 and in the second we let z = m + 4.
+
+In either case, z = 3 (mod 4), and z is not divisible by any of the primes in S.
+(This is because for any such prime p, m % p is 0 and thus z % p is either 2
+or 4, neither of which is divisible by any odd prime.)  
+
+Now consider the prime factorization of z.  It cannot include 2 because z is odd,
+and in cannot consist only of primes congruent to 1, mod 4, because a product of
+such primes would itself be congruent to 1, mod 4, and z is congruent to 3.  So
+there must exist at least one prime congruent to 3 in the factorization, and 
+we let this prime be our y.  As above, Existence and Generalization finish the
+proof.

@@ -1,0 +1,91 @@
+COMPSCI 250 Fall 2023: Solutions for Discussion #5
+
+(a) Let S(n) be the sum for i from 1 to n of i^2.  Prove that for any
+    natural number n, S(n) = n(n+1)(2n+1)/6.
+
+Proof: Induction on all naturals n. 
+       Base Case: n = 0. S(n) = 0 because the sum is empty,
+                         0(0+1)(2*0+1) = 0.
+       Inductive Hypothesis: S(n) = n(n+1)(2n+1)/6
+       Conclusion of Inductive Step: S(n+1) = (n+1)(n+2)(2n+3)/6.
+       Proof of Inductive Step:
+            S(n+1) = S(n) + (n+1)^2
+                   = n(n+1)(2n+1)/6 + 6(n+1)(n+1)/6 by the IH
+                   = (n+1)[n(2n+1) + 6(n+1)]/6
+                   = (n+1)[2n^2 + n + 6n + 6]/6
+                   = (n+1)[2n^2 + 7n + 6]/6
+                   = (n+1)(n+2)(2n+3)/6
+
+(b) Let T(n) be the sum for i from 1 to n of (-1)^n times i, so that S(3) =
+    -1 + 2 - 3 = -2.  Prove that for any natural number n, S(n) = n/2
+    if n is even and S(n) = -(n+1)/2 if n is odd.
+
+Proof: Induction on all naturals n.
+       Base case: n = 0. T(n) = 0 as the sum is empty.
+                         0 = 0/2 = n/2, correct as 0 is even.
+       Inductive hypothesis: T(n) = n/2 if n even, -(n+1)/2 if n odd.
+       Conclusion of inductive step: T(n+1) = (n+1)/2 if n+1 is even,
+                                              -(n+2)/2 if n+1 is odd.
+       Proof of inductive step:
+       Case 1, n is even and n+1 is odd:
+              T(n+1) = T(n) + (-1)^{n+1}(n+1)
+                     = T(n) - (n+1) because n+1 is odd
+                     = n/2 - (n+1) by the IH, because n is even
+                     = (n - 2n - 2)/2
+                     = -(n+2)/2, correct because n+1 is odd       
+       Case 2, n is odd and n+1 is even:
+              T(n+1) = T(n) + (-1)^{n+1}(n+1)
+                     = T(n) + (n+1) because n+1 is even
+                     = -(n+1)/2 + (n+1) by the IH, because n is odd
+                     = (n+1)/2, correct because n+1 is even
+
+       It is also possible to prove these properties of this sum by
+       odd-even induction, with an inductive step of P(n) --> P(n+2)
+       and base cases for n = 0 and n = 1.
+
+       For evens, P(0) is proved above, and we want P(n) --> P(n+2)
+       for even n.  Here S(n+2) = S(n) + (-1)^{n+1}(n+1) + (-1)^{n+2}(n+2) =
+       S(n) - (n+1) + (n+2) = S(n) + 1.  The IH says that S(n) = n/2, so 
+       S(n+2) = n/2 + 2 = (n+2)/2 as we want.
+
+       For odds, we need a base case P(1), saying that S(1) = -(1+1)/2 = -1,
+       which follows from computing S(1) = (-1)^1.  Again, 
+       we want P(n) --> P(n+2).  S(n+2) is still 
+       S(n) + (-1)^{n+1}(n+1) + (-1)^{n+2}(n+2), but now n is odd so 
+       this is S(n) + (n+1) - (n+2) = S(n) - 1.  The IH says that S(n) =
+       -(n+1)/2, so S(n+2) = -(1 + (n+1)/2) = -(n+2+1)/2, which proves
+       P(n+2) since n+2 is also odd.
+
+(c) Let L be a line segment in the plane.  Prove that for any natural
+     number n, if we place n distinct points on L (none of them at the
+     endpoints of L), then we divide it into exactly n+1 line segments.
+
+Proof: Induction on all naturals n.
+       Base Case: n = 0, no points placed on L, L is in one piece.
+       Inductive hypothesis: Any n such points divide L into n+1 pieces.
+       Conclusion of Inductive Step: Any n+1 such points divide L into 
+                                     n+2 pieces.
+       Proof of inductive step:
+             Let the n+1 distinct points be arbitrary.  Consider the first
+             n of them.  By the IH, they divide L into n+1 pieces.  Now
+             consider the last point.  Since it is not equal to any of the
+             others and is not an endpoint of L, it falls within one of the
+             pieces, and divides it into two.  This increases the total number
+             of pieces by one, from n+1 to n+2.
+
+(d) Consider a solid (a rectangular parallelepiped) made by attaching n sugar
+    cubes in a line, where each cube has a side of 1 centimeter.  Prove _by
+    induction_ that if n is any positive integer, the surface area of this
+    solid is 4n + 2 square centimeters.  (An induction for positive integers
+    has a base case of 1 instead of 0.
+
+Proof: Induction on all positive integers n:
+    Base Case: n = 1, cube has six sides, 4(1) + 2 = 6.
+    Inductive hypothesis: A stack of n cubes has area 4n + 2.
+    Conclusion of inductive step: A stack of n+1 cubes has area 4(n+1) + 2 = 4n+6.
+    Proof of inductive step: Assume we have a stack of n cubes, which by
+        the IH has area 4n + 2.  The new cube has area 6.  When we attach
+        the new cube, there is a contact surface of area 1, and so an area of 
+        1 on new cube and on the stack that is no longer surface area after
+        the attachment is made.  So the new area is 4n + 2 + 6 - 2 or 4n + 6.
+ 

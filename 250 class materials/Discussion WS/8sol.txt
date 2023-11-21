@@ -1,0 +1,30 @@
+COMPSCI 250 Fall 2023 Discussion #8 Solutions
+
+EE is the set of strings over {a, b} that have both an even number of a's and an
+even number of b's.
+
+EEP is the subset of EE consisting of non-empty strings that cannot be "factored"
+as the concatenation of two non-empty strings that are both in EE.
+
+We observe that the two-letter strings in EEP are aa and bb.
+
+The four-letter strings are abab, abba, baab, and baba.
+
+The six-letter strings are abaaab, abaaba, abbbab, abbbba, baaaab, baaaba, 
+babbab, and babbba.
+
+In general, except for aa and bb, a string in EEP must follow these rules:
+
+1) the first two letters must be different
+2) the middle letters consist of aa and bb pairs
+3) the last two letters must be different
+
+We can capture these rules by the regular expression (ab + ba)(aa + bb)^*(ab + ba).
+
+This makes EEP the language of the expression "aa + bb + (ab + ba)(aa + bb)^*(ab + ba)".
+
+And EE is the star of EEP, for the following reason -- clearly any concatenation
+of zero or more strings in EEP will be in EE, because the number of a's or the number
+of b's in any such string is the sum of even numbers, which is even.  And any string
+in EE can be factored into strings in EEP, because a string in EE is either in EEP 
+or can be factored into two shorter strings.
