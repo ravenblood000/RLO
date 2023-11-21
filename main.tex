@@ -11,6 +11,7 @@
 \usepackage{ulem}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{tikz}
 
 \begin{document}
 
@@ -175,6 +176,7 @@ Assume the alphabet $\sum=\{0,1\}$. If the English description is given, provide
     \item $(1+\lambda)(00^*1)^*0^*$
     \item The set of strings such that all pairs of adjacent 0's appear before any pairs of adjacent 1's.
 \end{enumerate}
+\newpage
 \subsection*{Answer}
 \begin{enumerate}[label=\alph*.]
     \item This can be thought of as either a 0 appearing before the 1, or the 1 appearing before the 0. Since these are the only mandated characters, the rest of the string can be any combination of 0's and 1's that come before, in-between, or after the 0 and 1. In other words, there are two possible string formats: $(0+1)^*0(0+1)^*1(0+1)^*$ or $(0+1)^*1(0+1)^*0(0+1)^*$
@@ -185,13 +187,83 @@ Assume the alphabet $\sum=\{0,1\}$. If the English description is given, provide
     \\ Even if the 0... is omitted, the string can only start with 0 1. 1 1 is not allowed.
     \\ Looking further, we can observe that within the $(00^*1)$ part, removing the optional 0's, $(01)$ the structure mandates that 0 must come before 1. So if this block repeats, the structure will looks like this: 0 1 0 1 with more 0's padding the in-between. And since only more 0's are added onto the end, we can conclude that this will be the set of all strings without consecutive 1's.
     \item This can be divided into two parts: The first part of the string that does not allow 11's, but does allow 00's, and the second part of the string that does not allow 00's, but does allow 11's.
-    \\ For a binary string where 11 cannot occur, this could be any combination of 0's or 10's: $(0+10)^*$
-    \\ No 11's: $(0+10)^*(1+\lambda)$
-    \\ No 00's: $(1+01)^*(0+\lambda)$
+    \\ For a binary string where 11 cannot occur, this could be any combination of 0's or 10's, either ending in a 1 or not: $(0+10)^*(1+\lambda)$
+    \\ The formula is much the same for a binary string where 00 cannot occur: $(1+01)^*(0+\lambda)$
+    \\ Concatenating the two together gives us the final string: $(0+10)^*(1+\lambda)(1+01)^*(0+\lambda)$
 \end{enumerate}
 \newpage
 \section*{Chapter 14: Finite Automata}
+\subsection*{14.1}
+Assume $\sum=\{0,1\}$. Draw a DFA for the language that accepts all binary strings with either an even number of 0's or contains exactly two 1's.
+\subsection*{Answer}
+Let us first consider what states this machine will need. The machine considers strings based on two different criteria, although a string only needs one to be accepted. The first condition is that there is an even number of 0's. There are only two states for this, an even number of 0's or an odd number of 0's. Reading in 0's would switch between the two states like so:
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (26,-20.8) circle (3);
+\draw (26,-20.8) node {even};
+\draw [black] (26,-20.8) circle (2.4);
+\draw [black] (43.2,-20.8) circle (3);
+\draw (43.2,-20.8) node {odd};
+\draw [black] (41.348,-23.145) arc (-46.98484:-133.01516:9.892);
+\fill [black] (41.35,-23.15) -- (40.42,-23.33) -- (41.1,-24.06);
+\draw (34.6,-26.3) node [below] {$0$};
+\draw [black] (40.2,-20.8) -- (29,-20.8);
+\fill [black] (29,-20.8) -- (29.8,-21.3) -- (29.8,-20.3);
+\draw (34.6,-20.3) node [above] {$0$};
+\draw [black] (14.4,-20.8) -- (23,-20.8);
+\fill [black] (23,-20.8) -- (22.2,-20.3) -- (22.2,-21.3);
+\end{tikzpicture}
+\end{center}
+Now let us consider the other criteria, which is "exactly two 1's". This has four states: zero 1's, exactly one 1, exactly two 1's, and more than two 1's, since beyond two 1's, that criteria will always fail. Reading in any 1 will move between these states, ending with the "more than two 1's" state in a dead end.
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (28.9,-20.3) circle (3);
+\draw (28.9,-20.3) node {$1$};
+\draw [black] (40.3,-20.3) circle (3);
+\draw (40.3,-20.3) node {$2$};
+\draw [black] (40.3,-20.3) circle (2.4);
+\draw [black] (52.2,-20.3) circle (3);
+\draw (52.2,-20.3) node {$>2$};
+\draw [black] (17.9,-20.3) circle (3);
+\draw (17.9,-20.3) node {$0$};
+\draw [black] (31.9,-20.3) -- (37.3,-20.3);
+\fill [black] (37.3,-20.3) -- (36.5,-19.8) -- (36.5,-20.8);
+\draw (34.6,-20.8) node [below] {$1$};
+\draw [black] (43.3,-20.3) -- (49.2,-20.3);
+\fill [black] (49.2,-20.3) -- (48.4,-19.8) -- (48.4,-20.8);
+\draw (46.25,-20.8) node [below] {$1$};
+\draw [black] (20.9,-20.3) -- (25.9,-20.3);
+\fill [black] (25.9,-20.3) -- (25.1,-19.8) -- (25.1,-20.8);
+\draw (23.4,-20.8) node [below] {$1$};
+\draw [black] (8.4,-20.3) -- (14.9,-20.3);
+\fill [black] (14.9,-20.3) -- (14.1,-19.8) -- (14.1,-20.8);
+\draw [black] (50.877,-17.62) arc (234:-54:2.25);
+\draw (52.2,-13.05) node [above] {$1$};
+\fill [black] (53.52,-17.62) -- (54.4,-17.27) -- (53.59,-16.68);
+\end{tikzpicture}
+\end{center}
+Since one criteria only cares about 0's being read in, and the other only cares about 1's being read in, we can combine the two into one machine with 8 states, each representing a state from the even/odd criteria \textit{and} a state from the "how many 1's" criteria.
+\begin{center}
+    \includegraphics[width=6cm]{Screenshot 2023-11-21 143618.png}
+\end{center}
 \newpage
+\subsection*{14.2}
+TODO: DFA Simplification question
+\subsection*{Answer}
+\newpage
+\subsection*{14.3}
+TODO: DFA to NFA conversion question
+\subsection*{Answer}
+\newpage
+\subsection{14.4}
+TODO: Prove a language is regular/irregular
+\subsection*{Answer}
+\newpage
+\subsection*{14.5}
+TODO: $\lambda-$NFA problem
+\subsection*{Answer}
 \section*{Chapter 15: Formal Language Theory}
 
 \end{document}
