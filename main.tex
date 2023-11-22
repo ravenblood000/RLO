@@ -167,6 +167,18 @@ Suppose we have a recursively-defined function (much like a Fibonacci sequence) 
 \end{itemize}
 \newpage
 \section*{Chapter 9: Graphs and Trees}
+\subsection*{9.1}
+How many different undirected graphs with $n$ nodes are possible? Assume that two graphs with $n$ nodes are "different" if they have different edges and give your answer as an expression of $n$.
+\newpage
+\subsection*{Answer}
+First, we must find out how many possible edges can exist in an undirected graph with $n$ nodes. This is the same as the number of edges that would be in the complete graph. There are many different ways to think about this:
+\begin{itemize}
+    \item Consider the adjacency matrix of the graph. Since there are $n$ nodes in the graph, the matrix is of size $n\times n$, and since the graph is complete, every entry in the matrix would be 1 except along the diagonal (since edges cannot be directed at themselves). So the number of edges would be the number of 1's in the matrix, divided by 2 so as not to double-count. This gives $\frac{(n\times n)-n}{2}$ or $\frac{n(n-1)}{2}$
+    \item Number the nodes from 1 to $n$. Beginning at node 1, it can have up to $n-1$ edges with the other $n-1$ nodes. The next, up to $n-2$ edges, the next, $n-3$, and so on. This gives the sum $(n-1)+(n+2)+...+2+1$, which is also equal to $\frac{n(n-1)}{2}$ through a combinatorial proof (not covered in this class).
+    \item In a complete graph, all $n$ nodes would have a degree of $n-1$. Sum this up across all nodes, and the total degree is $n(n-1)$. Then, to find the number of edges, divide by 2 to remove the duplicates, because one edge will be one degree in two separate nodes. This also gives $\frac{n(n-1)}{2}$
+    \item Consider all $n$ nodes as a set. From this set, one can \textit{choose} any unordered pair of two nodes to form an edge. This is the definition of the \textit{choose} operation, and so there are $n\choose 2$ possible edges. This again is equivalent to $\frac{n(n-1)}{2}$ edges by combinatorial proof.
+\end{itemize}
+Now that we know that there are $\frac{n(n-1)}{2}$ possible edges, we can think of these edges as being a set of edges, and each possible graph on $n$ nodes having some subset of those edges. To figure out how many different graphs are possible, we must figure out how many possible subsets there are for a set with $\frac{n(n-1)}{2}$ edges. This is the same as finding the size of the power set of the set of edges, which is $2^{\frac{n(n-1)}{2}}$.
 \newpage
 \section*{Chapter 5: Regular Expressions}
 \subsection*{5.1}
@@ -264,6 +276,8 @@ TODO: Prove a language is regular/irregular
 \subsection*{14.5}
 TODO: $\lambda-$NFA problem
 \subsection*{Answer}
+\newpage
 \section*{Chapter 15: Formal Language Theory}
-
+\subsection*{15.1}
+\subsection*{Answer}
 \end{document}
