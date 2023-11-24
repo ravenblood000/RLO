@@ -82,8 +82,15 @@ DEDUCTIVE SEQUENCE PROOF
 \subsection*{Answer}
 \newpage
 \subsection*{1.4}
-TODO: Contrapositive or contradiction proof
+Prove by contradiction that the sum of a rational number and an irrational number is irrational. Recall that a rational number is one
+which can be expressed as the quotient of two integers. An irrational number is one which cannot be represented as the quotient of two integers.
+You may assume that the operations addition, subtraction, and multiplication on rationals are well-defined. In other words, the sum, difference, or
+product of two rationals is always rational.
 \subsection*{Answer}
+
+Assume to the contrary, $\exists s$ such that $s = r + i$ where $r \in \mathbb{Q}$, the rational numbers, and $i \notin \mathbb{Q}$, or i is irrational.
+Well, then $i = s - r$. But we know that the difference between two rational numbers is always rational. Then i must be a rational number. But this is a contradiction
+because we assumed i to be irrational! 
 \newpage
 \section*{Chapter 2: Quantifiers and Relations}
 \subsection*{2.1}
@@ -270,8 +277,16 @@ TODO: DFA to NFA conversion question
 \subsection*{Answer}
 \newpage
 \subsection{14.4}
-TODO: Prove a language is regular/irregular
+Let $L^R$ be any arbitrary regular language. Let the language $L^R = {w^R : w \in L}$ be the reversal of L.
+Show that $L^R$ is regular.
 \subsection*{Answer}
+
+Since we know that $L$ is regular, we know that there exists some DFA or equivalent NFA which accepts $L$. Without loss of generality, we can
+assume that there exists only start or end state (If a DFA had multiple accepting states, you could eliminate them down to just one 
+by redirecting all of the arrows going into other accepting states into a single accepting state, and eliminating the redundant accepting
+states). Then we can construct a DFA or equivalent NFA which accepts $L^R$ by making the start state and accepting state, the accepting state
+a start state, and reversing every state transition (reversing the "arrows"). Then we have a machine that traverses backwards over every
+string in $L$, and have thus constructed a DFA for $L^R$. Since there exists a DFA / NFA for $L^R$, we know that $L^R$ is regular.
 \newpage
 \subsection*{14.5}
 TODO: $\lambda-$NFA problem
