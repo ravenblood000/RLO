@@ -78,8 +78,27 @@ $C\rightarrow S\rightarrow \neg D\rightarrow\neg G$
 \end{enumerate}
 \newpage
 \subsection*{Q1.3}
-DEDUCTIVE SEQUENCE PROOF
+
+Complete a deductive sequence proof based on the following propositions:
+\begin{enumerate}
+    \item $\lnot p \land q$
+    \item $r \rightarrow p$
+    \item $\lnot r \rightarrow s$
+    \item $s \rightarrow t$
+\end{enumerate}
+Your answer should either be a conjunction of all of the variables p,q,r,s,t which enumerates their
+truth values, or you may explicitly state the truth value of each variable.
 \subsection*{Answer}
+\begin{enumerate}
+    \item Assume $\lnot p$
+    \item q (Premise 1, right separation)
+    \item $\lnot p \rightarrow \lnot r$ (Contrapositive of Premise 2)
+    \item $\lnot r$ (Modus Ponens of Line 3)
+    \item $s$ (Modus Ponens of Premise 3)
+    \item $t$ (Modus Ponens of Premise 4)
+\end{enumerate}
+
+Then our final solution is $\lnot p \land q \land \lnot r \land s \land t$
 \newpage
 \subsection*{1.4}
 Prove by contradiction that the sum of a rational number and an irrational number is irrational. Recall that a rational number is one
