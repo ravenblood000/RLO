@@ -313,5 +313,13 @@ TODO: $\lambda-$NFA problem
 \newpage
 \section*{Chapter 15: Formal Language Theory}
 \subsection*{15.1}
+Let L be a language that is Turing Recognizable by some Turing Machine. Let L' be the language $\Sigma^* - L$,
+and let that language also be Turing Recognizable by some other Turing Machine. Prove that L is Turing Decidable.
+(Hint: Recall that a single-tape Turing Machine can be used to simulate a multi-tape Turing Machine)
 \subsection*{Answer}
+We know this to be true by the TR / TD Theorem. But for a rigorous proof, recall that a multi-tape Turing Machine can be simulated by
+a single-tape Turing Machine. Then we will construct a multi-tape Turing Machine which runs the Turing Machines for L and L' in parallel. One of these
+is guaranteed to terminate, since $L + L' = \Sigma^*$. If, on any given string, the Turing Machine that recognizes L terminates, 
+we know that string is in L. If the Turing Machine that recognizes L' terminates, we know that string is not in L. Then here we have
+constructed a Turing Machine that always decides whether or not a string is in L, and so L is Turing Decidable.
 \end{document}
