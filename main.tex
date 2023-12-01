@@ -415,17 +415,25 @@ TODO: DFA Simplification question
 \subsection*{14.4 Answer}
 \newpage
 \subsection*{Q14.5}
-Convert the NFA below into a DFA using the subset construction.
+Convert the NFA below into a DFA using the subset construction. This should be done by:
+\begin{itemize}
+  \item Creating DFA states as subsets of the NFA states.
+  \item Defining the start state of the DFA as the epsilon-closure of NFA state 0.
+  \item Including any subset containing NFA state 3 as accept states in the DFA.
+  \item Determining the DFA transitions for each symbol from each state subset.
+\end{itemize}
+Provide the transition table for the DFA.
 \begin{center}
     \includegraphics[width=12cm]{3.png}
 \end{center}
 \newpage
 \subsection*{14.5 Answer}
-Each state of the DFA is a set of states of the NFA. The initial state of the DFA is the \(\varepsilon\)-closure of the initial state of the NFA. Therefore, we have:
+Each state of the DFA is a set of states of the NFA. The DFA's initial state, $S_0$, is the epsilon-closure of the NFA's initial state, which includes states $\{0, 1, 3\}$.
 \[\varepsilon\text{-closure}\{0\} = \{0, 1, 3\} = S_0\]
 \begin{center}
     \includegraphics[width=12cm]{4.png}
 \end{center}
+For input $a$, the transition from $S_0$ leads to a new DFA state, $S_1$, determined by the epsilon-closure of the set $\{1, 2\}$, resulting in the set $\{1, 2, 3\}$. For input $b$, the transition from $S_0$ leads to state $S_2$, which is the epsilon-closure of the set $\{3\}$, or $\{1, 3\}$. The DFA transitions from state $S_1$ on input $a$ lead to a sinking state, as there are no corresponding NFA transitions. Conversely, on input $b$, $S_1$ transitions to the previously established state $S_2$. The transitions from state $S_2$ on inputs $a$ and $b$ need to be determined following the same methodology, considering the epsilon-closures and transitions in the NFA.
 The final diagram is : 
 \begin{center}
     \includegraphics[width=12cm]{5.png}
