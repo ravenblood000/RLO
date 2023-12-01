@@ -13,6 +13,14 @@
 \usepackage{amsmath}
 \usepackage{tikz}
 \usepackage{url}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
+
 
 \begin{document}
 
@@ -20,7 +28,6 @@
 \begin{center}
     \textbf{Please Fill Out Our Feedback Form: \href{https://forms.gle/1ieupiHHHSuTEjXe9}{https://forms.gle/1ieupiHHHSuTEjXe9}}
 \end{center}
-
 \section*{NOTES ON INTENDED USE}
 We hope you find this study guide useful, however, we would like to make a few notes on its intended use. 
 \begin{center}
@@ -31,7 +38,14 @@ We hope you find this study guide useful, however, we would like to make a few n
     \end{enumerate}
     
 \end{center}
+
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{Chapter 1: Sets and Predicate Logic}
+
+
 \section*{Chapter 1: Sets and Predicate Logic}
+\addcontentsline{toc}{subsection}{Q1.1}
 \subsection*{Q1.1}
 Solve the following syllogism. Report the answer as a logical implication, as well as a naturally-spoken English sentence.
 \begin{itemize}
@@ -41,7 +55,8 @@ Solve the following syllogism. Report the answer as a logical implication, as we
     \item My doctor recommends all foods that are good for dinner.
 \end{itemize}
 \newpage
-\subsection*{1.1 Answer}
+\addcontentsline{toc}{subsection}{Q1.1 Answer}
+\subsection*{Q1.1 Answer}
 We will use the following variables: $D=\text{doctor recommends it},S=\text{sweet},A=\text{agrees with me},G=\text{good for dinner}$
 \begin{itemize}
     \item This can be read as "If my doctor recommends it, then it's not very sweet." $D\rightarrow \neg S$
@@ -53,6 +68,7 @@ $C\rightarrow S\rightarrow \neg D\rightarrow\neg G$
 \\ Transitively, $C\rightarrow\neg G$
 \\ In English, "If it's cake, then it's not good for dinner." Or, more naturally, "Cake is not good for dinner."
 \newpage
+\addcontentsline{toc}{subsection}{Q1.2}
 \subsection*{Q1.2}
 \begin{enumerate}[label=\alph*.]
     \item What values of $a$ and $b$ make the following statement true? Prove using a truth table.
@@ -61,7 +77,8 @@ $C\rightarrow S\rightarrow \neg D\rightarrow\neg G$
     $$(a \lor \neg b) \land (b \land \neg a)\rightarrow (\neg c\land(a \lor b))$$
 \end{enumerate}
 \newpage
-\subsection*{1.2 Answer}
+\addcontentsline{toc}{subsection}{Q1.2 Answer}
+\subsection*{Q1.2 Answer}
 \begin{enumerate}[label=\alph*.]
     \item What values of $a$ and $b$ make the following statement true? Prove using a truth table.
     $$(a \lor \neg b) \land (b \land \neg a)$$
@@ -83,6 +100,7 @@ $C\rightarrow S\rightarrow \neg D\rightarrow\neg G$
     \\ All possible values of $a$, $b$, and $c$ will make this statement true. We know from part (a) that the antecedent of the implication step is always false. There are no $a$ and $b$ values that make it true. Therefore, there is no value that the consequent could have to make the whole implication evaluate to true. If the consequent is true, then $F\rightarrow T$ evaluates to true. If the consequent is false, then $F\rightarrow F$ still evaluates to true. 
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{subsection}{Q1.3}
 \subsection*{Q1.3}
 Complete a deductive sequence proof based on the following propositions:
 \begin{enumerate}
@@ -94,7 +112,8 @@ Complete a deductive sequence proof based on the following propositions:
 Your answer should either be a conjunction of all of the variables p,q,r,s,t which enumerates their
 truth values, or you may explicitly state the truth value of each variable.
 \newpage
-\subsection*{1.3 Answer}
+\addcontentsline{toc}{subsection}{Q1.3 Answer}
+\subsection*{Q1.3 Answer}
 \begin{enumerate}
     \item Assume $\lnot p$
     \item q (Premise 1, right separation)
@@ -105,18 +124,21 @@ truth values, or you may explicitly state the truth value of each variable.
 \end{enumerate}
 Then our final solution is $\lnot p \land q \land \lnot r \land s \land t$
 \newpage
+\addcontentsline{toc}{subsection}{Q1.4}
 \subsection*{Q1.4}
 Prove by contradiction that the sum of a rational number and an irrational number is irrational. Recall that a rational number is one
 which can be expressed as the quotient of two integers. An irrational number is one which cannot be represented as the quotient of two integers.
 You may assume that the operations addition, subtraction, and multiplication on rationals are well-defined. In other words, the sum, difference, or
 product of two rationals is always rational.
 \newpage
-\subsection*{1.4 Answer}
+\addcontentsline{toc}{subsection}{Q1.4 Answer}
+\subsection*{Q1.4 Answer}
 Assume to the contrary, $\exists s$ such that $s = r + i$ where $r \in \mathbb{Q}$, the rational numbers, and $i \notin \mathbb{Q}$, or i is irrational.
 Well, then $i = s - r$. But we know that the difference between two rational numbers is always rational. Then i must be a rational number. But this is a contradiction
 because we assumed i to be irrational! 
 \newpage
-\subsection*{USEFUL RESOURCES FOR SETS AND PREDICATE LOGIC}
+\addcontentsline{toc}{subsection}{Additional Resources}
+\subsection*{Additional Resources for Sets and Predicate Logic}
 \begin{enumerate}
     \item \href{https://www.youtube.com/watch?v=A2k3ulOJ3u4}{Translating Statements to Propositional Logic} 
     \item \href{https://www.youtube.com/watch?v=A3Ffwsnad0k&list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz}{Excellent Discrete Math Playlist}
@@ -126,8 +148,10 @@ because we assumed i to be irrational!
     \item \href{https://www.youtube.com/watch?v=8DW0K3mnc-0}{Rules of Inference Video}
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{section}{Chapter 2: Quantifiers and Relations}
 \section*{Chapter 2: Quantifiers and Relations}
-\subsection*{2.1}
+\addcontentsline{toc}{subsection}{Q2.1}
+\subsection*{Q2.1}
 Consider the set $A=\mathbb{N}$
 \\ Identify whether the following relations are reflexive, antireflexive, symmetric, antisymmetric, or transitive.
 \begin{itemize}
@@ -135,7 +159,8 @@ Consider the set $A=\mathbb{N}$
     \item $x$ relates to $y$ if and only if $x\%2=y\%2$
 \end{itemize}
 \newpage
-\subsection*{2.1 Answer}
+\addcontentsline{toc}{subsection}{Q2.1 Answer}
+\subsection*{Q2.1 Answer}
 \begin{itemize}
     \item $x$ relates to $y$ if and only if $x=2y$
     \\ This is not reflexive, because for most numbers, $x\neq 2x$. However, it is also not antireflexive, since $x=2x$ is true for $x=0$. It is not symmetric, since if $x=2y$, then $y\neq2x$. The only case when this is true is for $x=y=0$, when $x$ and $y$ are the same. Therefore, this relation is antisymmetric. It is not transitive, since if $x=2y$ and $y=2x$, then $x=4z$, which is not always equal to $2z$.
@@ -143,14 +168,16 @@ Consider the set $A=\mathbb{N}$
     \\ This is reflexive, since $x\%2=x\%2$ for all $x$. Because it is reflexive, it cannot be antireflexive. It is symmetric, since if $x\%2=y\%2$, then   $y\%2=x\%2$. It is not antisymmetric, since this can be true of different $x$ and $y$ values. It is transitive, since if $x\%2=y\%2$ and $y\%2=z\%2$, then $x\%2=z\%2$.
 \end{itemize}
 \newpage
-\subsection*{2.2 Function}
+\addcontentsline{toc}{subsection}{Q2.2}
+\subsection*{Q2.2}
 Let \( A, B, C, D \) be nonempty sets.
 \begin{enumerate}
     \item[a)] Prove that \( A \times B \subseteq C \times D \) if and only if \( A \subseteq C \) and \( B \subseteq D \).
     \item[b)] What happens to the result in part (a) if any of the sets \( A, B, C, D \) is empty?
 \end{enumerate}
 \newpage
-\subsection*{2.2 Answer}
+\addcontentsline{toc}{subsection}{Q2.2 Answer}
+\subsection*{Q2.2 Answer}
 \begin{enumerate}
     \item[(a)] Assume that \( A \times B \subseteq C \times D \) and let \( a \in A \) and \( b \in B \). Then \( (a, b) \in A \times B \), and since \( A \times B \subseteq C \times D \) we have \( (a, b) \in C \times D \). But \( (a, b) \in C \times D \) implies \( a \in C \) and \( b \in D \). Hence, \( a \in A \) implies \( a \in C \), so \( A \subseteq C \), and \( b \in B \) implies \( b \in D \), so \( B \subseteq D \).
     Conversely, suppose that \( A \subseteq C \) and \( B \subseteq D \), and that \( (x, y) \in A \times B \). Then \( x \in A \) and \( y \in B \) implies \( x \in C \) (since \( A \subseteq C \)) and \( y \in D \) (since \( B \subseteq D \)) implies \( (x, y) \in C \times D \). Consequently, \( A \times B \subseteq C \times D \).
@@ -161,6 +188,7 @@ Let \( A, B, C, D \) be nonempty sets.
     However, the converse need not hold. For example, let \( A = \emptyset \), \( B = \{1, 2\} \), \( C = \{1, 2\} \) and \( D = \{1\} \). Then \( A \times B = \emptyset \) --- if not, there exists an ordered pair \( (x, y) \) in \( A \times B \), and this means that the empty set \( A \) contains an element \( x \). And so \( A \times B = \emptyset \subseteq C \times D \) --- but \( B = \{1, 2\} \not\subseteq \{1\} = D \).
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{subsection}{Q2.3}
 \subsection*{Q2.3}
  Determine whether or not each of the following relations is a function. If a relation is a function, find its range.
 
@@ -172,7 +200,8 @@ Let \( A, B, C, D \) be nonempty sets.
     \item[e)] \( \mathcal{R} \) is a relation from \( A \) to \( B \) where \( |A| = 5 \), \( |B| = 6 \), and \( |\mathcal{R}| = 6 \).
 \end{enumerate}
 \newpage
-\subsection*{2.3 Answer}
+\addcontentsline{toc}{subsection}{Q2.3 Answer}
+\subsection*{Q2.3 Answer}
 \begin{enumerate}
     \item[(a)] Function: Range = \{7, 8, 11, 16, 23, \ldots\}
     \item[(b)] Relation, not a function. For example, both (4,2) and (4, -2) are in the relation.
@@ -181,6 +210,7 @@ Let \( A, B, C, D \) be nonempty sets.
     \item[(e)] Since \( |\mathcal{R}| > 5 \), \( \mathcal{R} \) cannot be a function.
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{subsection}{Q2.4}
 \subsection*{Q2.4}
 Determine whether each of the following statements is true or false. If the statement is false, provide a counterexample.
 \begin{enumerate}
@@ -190,7 +220,8 @@ Determine whether each of the following statements is true or false. If the stat
     \item[d)] \( [a] = [-a] \) for all \( a \in \mathbb{R} \).
 \end{enumerate}
 \newpage
-\subsection*{2.4 Answer}
+\addcontentsline{toc}{subsection}{Q2.4 Answer}
+\subsection*{Q2.4 Answer}
 \begin{enumerate}
     \item[(a)] True
     \item[(b)] False: Let \( a = 1.5 \). Then \( \lfloor 1.5 \rfloor = 1 \neq 2 = \lfloor a \rfloor \)
@@ -198,13 +229,15 @@ Determine whether each of the following statements is true or false. If the stat
     \item[(d)] False: Let \( a = 1.5 \). Then \( \lfloor -a \rfloor = -2 \neq -1 = \lfloor -a \rfloor \).
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{subsection}{Q2.5}
 \subsection*{Q2.5}
 \begin{enumerate}
     \item[3. a)] Let \( a \in \mathbb{R}^+ \) where \( a \geq 1 \). Prove that (i) \( \left\lfloor \frac{a}{a} \right\rfloor = 1 \); and (ii) \( \left\lfloor \frac{1}{a} \right\rfloor = 0 \).
     \item[b)] If \( a \in \mathbb{R}^+ \) and \( 0 < a < 1 \), which result(s) in part (a) is (are) true?
 \end{enumerate}
 \newpage
-\subsection*{2.5 Answer}
+\addcontentsline{toc}{subsection}{Q2.5 Answer}
+\subsection*{Q2.5 Answer}
 a) Proof (i): If \( a \in \mathbb{Z}^+ \), then \( \lfloor a \rfloor = a \) and \( \lfloor a/a \rfloor = 1 \). If \( a \notin \mathbb{Z}^+ \), write \( a = n + c \), where \( n \in \mathbb{Z}^+ \) and \( 0 < c < 1 \). Then \( \lfloor a/a \rfloor = \lfloor (n + 1)/(n + c) \rfloor = 1 + \lfloor (1 - c)/(n + c) \rfloor \), where \( 0 < (1 - c)/(n + c) < 1 \). Hence \( \lfloor a/a \rfloor = 1 + \lfloor (1 - c)/(n + c) \rfloor = 1 \).
 
 Proof (ii): For \( a \in \mathbb{Z}^+ \), \( \lfloor a \rfloor = a \) and \( \lfloor 1/a \rfloor = 0 \) and \( \lfloor 1/a \rfloor = \lfloor 1 \rfloor = 1 \). When \( a \notin \mathbb{Z}^+ \), let \( a = n + c \), where \( n \in \mathbb{Z}^+ \) and \( 0 < c < 1 \). Then \( \lfloor 1/a \rfloor = \lfloor 1/(n + c) \rfloor = 1 - \lfloor c/(n + c) \rfloor \), where \( 0 < c/(n + c) < 1 \). Consequently \( \lfloor 1/a \rfloor = 1 - \lfloor c/(n + c) \rfloor = 1 \).
@@ -215,7 +248,8 @@ b) Consider \( a = 0.1 \). Then
 
 In fact (ii) is false for all \( 0 < a < 1 \), since \( \lfloor 1/a \rfloor = 0 \) for all such values of \( a \). In the case of (i), when \( 0 < a \leq 0.5 \), it follows that \( \lfloor a/a \rfloor \geq 2 \) and \( \lfloor 1/a \rfloor \geq 2 \) not equal to \( f \). However, for \( 0.5 < a < 1 \), \( \lfloor a/a \rfloor = 1/a \) where \( 1 < 1/a < 2 \), and so \( \lfloor a/a \rfloor = 1 \) for \( 0.5 < a < 1 \).
 \newpage
-\subsection*{USEFUL RESOURCES FOR QUANTIFIERS AND RELATIONS}
+\addcontentsline{toc}{subsection}{Additional Resources}
+\subsection*{Additional Resources for Quantifiers and Relations}
 \begin{enumerate}
     \item \href{https://www.youtube.com/watch?v=tyDKR4FG3Yw&list=PLDDGPdw7e6Ag1EIznZ-m-qXu4XX3A0cIz}{Set Theory Playlist}
     \item \href{https://www.youtube.com/watch?v=ZgcTX16borA}{Equivalence Relations and Equivalence Classes Explained}
@@ -226,12 +260,15 @@ In fact (ii) is false for all \( 0 < a < 1 \), since \( \lfloor 1/a \rfloor = 0 
     \item \href{https://www.youtube.com/watch?v=6fwJj14O_TM}{Reflexive, Symmetric, Transitive}
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{section}{Chapter 3: Number Theory}
 \section*{Chapter 3: Number Theory}
-\subsection*{Q3.1 General Number Theory}
+\addcontentsline{toc}{subsection}{Q3.1}
+\subsection*{Q3.1}
 Prove that for some relatively prime $a$ and $n$, multiplying all numbers in the set $\{1,2,...,n-2,n-1\}$ by $a$ will output a permutation of $\{1,2,...,n-2,n-1\}$.
 \\ Hint: There are two parts to this proof---existence and uniqueness. To show that multiplication by $a$ permutes the elements of the set, you must show that the multiplication always produces an element in the set (existence) and you must show that that element will never be repeatedly produced via multiplication by $a$ (uniqueness). Consider how these relate to modular arithmetic and modular inverses.
 \newpage
-\subsection*{3.1 Answer}
+\addcontentsline{toc}{subsection}{Q3.1 Answer}
+\subsection*{Q3.1 Answer}
 As stated in the hint, we must show both the existence and uniqueness of the elements from the set when multiplied by $a$.
 \\ First, to prove existence, we will prove that for some relatively prime $a$ and $n$, and for some elements $b,c\in \{1,2,...,n-2,n-1\}$,  $ab=c$ (mod $n$), unless $b=0$. This is equivalent to saying that "If $ab=0$ (mod $n$), then $b=0$ (mod $n$)". Since $a$ and $n$ are relatively prime, $a$ has an inverse in mod $n$. Multiply both sides by $a^{-1}$ (mod $n$) to get $aba^{-1}=0(a^{-1})$ (mod $n$). $aa^{-1}$ will cancel out to 1, showing that $b=0$ (mod $n$).
 \\ Next, to prove uniqueness, we will show that for some relatively prime $a$ and $n$, if $ab=ac$ (mod $n$), then $b=c$. Once again, because $a$ and $n$ are relatively prime, we know $a$ must have some inverse $a^{-1}$ (mod $n$). Multiplying both sides by $a^{-1}$ gives $aba^{-1}=aca^{-1}$ (mod $n$), leaving $b=c$ (mod $n$).
@@ -240,18 +277,17 @@ As stated in the hint, we must show both the existence and uniqueness of the ele
 \subsection*{Q3.2 Euclid's Algorithm}
 Let $a = 473$ and $b = 47$. Run Euclid's Algorithm on a and b to find their GCD. What can you conclude about a and b from your run of Euclid's Algorithm?
 \newpage
-\subsection*{3.2 Answer}
-
+\addcontentsline{toc}{subsection}{Q3.2 Answer}
+\subsection*{Q3.2 Answer}
 \begin{align*}
 473 &= 10 \times 47 + 3 \\
 47 &= 15 \times 3 + 2 \\
 3 &= 1 \times 2 + 1 \\
 2 &= 2 \times 1 + 0 \\
 \end{align*}
-
 The GCD of 473 and 47 is 1 since the algorithm ends with a remainder of 1. Since their GCD is 1, the two numbers are relatively prime.
 \newpage
-\subsection*{Chinese Remainder Theorem (CRT)}
+\addcontentsline{toc}{subsection}{Q3.3}
 \subsection*{Q3.3}
 Use the Chinese Remainder Theorem to find the smallest positive integer \( x \) that satisfies the following three simultaneous congruences:
 \begin{align*}
@@ -260,7 +296,8 @@ x &\equiv 3 \pmod{5}\\
 x &\equiv 2 \pmod{7}
 \end{align*}
 \newpage
-\subsection*{3.3 Answer}
+\addcontentsline{toc}{subsection}{Q3.3 Answer}
+\subsection*{Q3.3 Answer}
 \begin{align*}
 n_1 &= 3\\  
 n_2 &= 5\\
@@ -287,13 +324,16 @@ x &= t_1 + t_2 + t_3 \pmod{105}\\
 \end{align*}
 However, since we want the smallest positive integer, \( x = 105 \pmod{105} \) gives \( x = 0 \). Therefore, we need to subtract \( N \) from \( 105 \) to find the smallest positive solution. So the corrected smallest positive integer solution is \( x = 105 - 105 = 0 \). This seems incorrect as 0 is not positive, we need to reevaluate the \( t_i \) terms to find the correct solution.
 \newpage
-\subsection*{USEFUL NUMBER THEORY RESOURCES}
+\addcontentsline{toc}{subsection}{Additional Resources}
+\subsection*{Additional Resources for Number Theory}
 \begin{enumerate}
     \item \href{https://www.youtube.com/watch?v=yHwneN6zJmU}{Euclid's Algorithm}
     \item \href{https://www.youtube.com/watch?v=ru7mWZJlRQg&t=276s}{Chinese Remainder Theorem} 
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{section}{Chapter 4: Induction and Recursion}
 \section*{Chapter 4: Induction and Recursion}
+\addcontentsline{toc}{subsection}{Q4.1}
 \subsection*{Q4.1}
 Explain the error in the following induction proof:
 \\ \textbf{Claim}: All students are the same height.
@@ -306,14 +346,17 @@ Explain the error in the following induction proof:
 \\ Both sets contain $n$ students, and so by the inductive hypothesis, all students in each set must be of the same height. And if all students in each set have the same height, then all students in the full $n+1$ set must have the same height.
 \\ In conclusion, all students in any set of size $n\geq1$ must have the same height.
 \newpage
-\subsection*{4.1 Answer}
+\addcontentsline{toc}{subsection}{Q4.1 Answer}
+\subsection*{Q4.1 Answer}
 The error in the proof can be attributed to the overlap between the two sets in the inductive step. The base case is easy to observe for some set $\{s_1\}$, but when the inductive step is applied to "step" from $n=1$ to $n=2$, the two sets described in the inductive step would be $\{s_1\}$ and $\{s_2\}$, in which may be two students of differing heights. So while $s_1$ and $s_2$ are the same heights as themselves, this does not mean that they are the same height as one another.
 \newpage
+\addcontentsline{toc}{subsection}{Q4.2}
 \subsection*{Q4.2}
 Suppose we have a recursively-defined function (much like a Fibonacci sequence) $f_n=5f_{n-1}-6f_{n-2}$ where $f_0=2$ and $f_1=5$.
 \\ Prove inductively that $f_n=2^n+3^n$ for all $n\geq0$.
 \newpage
-\subsection*{4.2 Answer}
+\addcontentsline{toc}{subsection}{Q4.2 Answer}
+\subsection*{Q4.2 Answer}
 \textbf{Claim}: $f_n=2^n+3^n$ for all $n\geq0$
 \\ \textbf{Base case}: For $n=0$: $f_0=2$, and $2^0+3^0=1+1=2$. For $n=1$: $f_1=5$ and $2^1+3^1=2+3=5$.
 \\ \textbf{Inductive hypothesis}: Assume that $f_n=2^n+3^n$ for all $n\geq0$
@@ -326,7 +369,8 @@ Suppose we have a recursively-defined function (much like a Fibonacci sequence) 
     \item $f_{n+1}=2^{n+1}+3^{n+1}$
 \end{itemize}
 \newpage
-\subsection*{USEFUL RESOURCES FOR INDUCTION AND RECURSION}
+\addcontentsline{toc}{subsection}{Additional Resources}
+\subsection*{Additional Resources for Induction and Recursion}
 \begin{enumerate}
     \item \href{https://www.youtube.com/watch?v=IdTaA6iz3Mo&list=PL5KkMZvBpo5CnkA4bi7l6W62VPoYRbOEk&index=1}{Induction Playlist}
     \item \href{https://www.youtube.com/watch?v=-vJhahLdmLI}{Strong Induction}
@@ -334,11 +378,13 @@ Suppose we have a recursively-defined function (much like a Fibonacci sequence) 
     \item \href{https://www.youtube.com/watch?v=5RB4H_12wOs}{Recursively Defined Functions}
 \end{enumerate}
 \newpage
-\section*{Chapter 9: Graphs and Trees}
+\addcontentsline{toc}{section}{Chapter 9: Graphs and Trees} \section*{Chapter 9: Graphs and Trees}
+\addcontentsline{toc}{subsection}{Q9.1}
 \subsection*{Q9.1}
 How many different undirected graphs with $n$ nodes are possible? Assume that two graphs with $n$ nodes are "different" if they have different edges and give your answer as an expression of $n$.
 \newpage
-\subsection*{9.1 Answer}
+\addcontentsline{toc}{subsection}{Q9.1 Answer}
+\subsection*{Q9.1 Answer}
 First, we must find out how many possible edges can exist in an undirected graph with $n$ nodes. This is the same as the number of edges that would be in the complete graph. There are many different ways to think about this:
 \begin{itemize}
     \item Consider the adjacency matrix of the graph. Since there are $n$ nodes in the graph, the matrix is of size $n\times n$, and since the graph is complete, every entry in the matrix would be 1 except along the diagonal (since edges cannot be directed at themselves). So the number of edges would be the number of 1's in the matrix, divided by 2 so as not to double-count. This gives $\frac{(n\times n)-n}{2}$ or $\frac{n(n-1)}{2}$
@@ -348,40 +394,8 @@ First, we must find out how many possible edges can exist in an undirected graph
 \end{itemize}
 Now that we know that there are $\frac{n(n-1)}{2}$ possible edges, we can think of these edges as being a set of edges, and each possible graph on $n$ nodes having some subset of those edges. To figure out how many different graphs are possible, we must figure out how many possible subsets there are for a set with $\frac{n(n-1)}{2}$ edges. This is the same as finding the size of the power set of the set of edges, which is $2^{\frac{n(n-1)}{2}}$.
 \newpage
-
-\subsection*{Q9.2}
-Develop a pseudocode method for a recurisve implementation of DFS.
-\subsection*{9.2 Answer}
-\begin{verbatim}
-    DFS-Recursive(Graph, start):
-    visited = set()
-    Recursive-DFS(start, visited)
-
-Recursive-DFS(node, visited):
-    if node is not visited:
-        visit node
-        add node to visited set
-        for each neighbor of node:
-            if neighbor is not visited:
-                Recursive-DFS(neighbor, visited)
-\end{verbatim}
-
-\subsection*{Q9.3}
-SOURCE: UW Madison \href{https://pages.cs.wisc.edu/~dyer/cs540/exams/exam1-f19-sol.pdf}{https://pages.cs.wisc.edu/~dyer/cs540/exams/exam1-f19-sol.pdf}
-
-\includegraphics{UCS_question_graph.png}
-
-Consider the following graph. S is a start state and G1 and G2 are end states. Assume that nodes are searched in alphabetical order. Conduct a BFS and UCS on the graph.
-What path does BFS return and what is its cost? What path does UCS return and what is its cost? Produce the overall
-results of both search methods as a rigorous proof.
-
-\subsection*{9.3 Answer}
-BFS returns the path from S to G1 with a cost of 7. UCS returns the path from S to A to C to G2 with a cost of 3. BFS will push all the neighboring nodes
-from S, but terminate upon finding that G1 is a goal state and is a neighbor of S. UCS will first check from S to A and B, being that their cost is 1.
-Then, it will add the path from S to A to C, because its cost is 2. It will add the paths from S to B to G2 and S to B to C, but those have costs higher
-than the path from S to A to C. Resuming from S to A to C, it will add the path S to A to C to G2, which will have the lowest cost of any other paths, 
-and then will return that path with cost of 3. 
-\subsection*{USEFUL RESOURCES FOR GRAPHS AND TREES}
+\addcontentsline{toc}{subsection}{Additional Resources}
+\subsection*{Additional Resources for Graphs and Trees}
 \begin{enumerate}
     \item \href{https://www.youtube.com/watch?v=zaBhtODEL0w}{DFS and BFS}
     \item \href{https://www.youtube.com/watch?v=DgXR2OWQnLc&list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P}{Graph Theory Playlist}
@@ -389,7 +403,9 @@ and then will return that path with cost of 3.
     \item \href{https://www.youtube.com/watch?v=6TsL96NAZCo}{A* Search}
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{section}{Chapter 5: Regular Expressions}
 \section*{Chapter 5: Regular Expressions}
+\addcontentsline{toc}{subsection}{Q5.1}
 \subsection*{Q5.1}
 Assume the alphabet $\sum=\{0,1\}$. If the English description is given, provide the regular expression. If the regular expression is given, give a short, English description of the accepted set of strings.
 \begin{enumerate}[label=\alph*.]
@@ -398,7 +414,8 @@ Assume the alphabet $\sum=\{0,1\}$. If the English description is given, provide
     \item The set of strings such that all pairs of adjacent 0's appear before any pairs of adjacent 1's.
 \end{enumerate}
 \newpage
-\subsection*{5.1 Answer}
+\addcontentsline{toc}{subsection}{Q5.1 Answer}
+\subsection*{Q5.1 Answer}
 \begin{enumerate}[label=\alph*.]
     \item This can be thought of as either a 0 appearing before the 1, or the 1 appearing before the 0. Since these are the only mandated characters, the rest of the string can be any combination of 0's and 1's that come before, in-between, or after the 0 and 1. In other words, there are two possible string formats: $(0+1)^*0(0+1)^*1(0+1)^*$ or $(0+1)^*1(0+1)^*0(0+1)^*$
     \\ Together, the full regex is $((0+1)^*0(0+1)^*1(0+1)^*)+((0+1)^*1(0+1)^*0(0+1)^*)$
@@ -413,16 +430,17 @@ Assume the alphabet $\sum=\{0,1\}$. If the English description is given, provide
     \\ Concatenating the two together gives us the final string: $(0+10)^*(1+\lambda)(1+01)^*(0+\lambda)$
 \end{enumerate}
 \newpage
-\subsection*{USEFUL RESOURCES FOR REGULAR EXPRESSIONS}
+\addcontentsline{toc}{subsection}{Additional Resources}
+\subsection*{Additional Resources for Regular Expressions}
 \begin{enumerate}
     \item \href{https://www.youtube.com/playlist?list=PLBlnK6fEyqRgp46KUv4ZY69yXmpwKOIev}{Formal Language Theory Playlist}
 \end{enumerate}
 \newpage
-\section*{Chapter 14: Finite Automata}
-\subsection*{Q14.1}
+\addcontentsline{toc}{section}{Chapter 14: Finite Automata} \section*{Chapter 14: Finite Automata}
+\addcontentsline{toc}{subsection}{Q14.1} \subsection*{Q14.1}
 Assume $\sum=\{0,1\}$. Draw a DFA for the language that accepts all binary strings with either an even number of 0's or contains exactly two 1's.
 \newpage
-\subsection*{14.1 Answer}
+\addcontentsline{toc}{subsection}{Q14.1 Answer} \subsection*{Q14.1 Answer}
 Let us first consider what states this machine will need. The machine considers strings based on two different criteria, although a string only needs one to be accepted. The first condition is that there is an even number of 0's. There are only two states for this, an even number of 0's or an odd number of 0's. Reading in 0's would switch between the two states like so:
 \begin{center}
 \begin{tikzpicture}[scale=0.2]
@@ -476,10 +494,12 @@ Since one criteria only cares about 0's being read in, and the other only cares 
     \includegraphics[width=6cm]{Screenshot 2023-11-21 143618.png}
 \end{center}
 \newpage
+\addcontentsline{toc}{subsection}{Q14.2}
 \subsection*{Q14.2}
 Draw a DFA that accepts the language consisting of the set of all strings of \( x \)'s and \( y \)'s that start with \( xy \) or \( yy \) followed by any string of \( x \)'s and \( y \)'s.
 \newpage
-\subsection*{14.2 Answer}
+\addcontentsline{toc}{subsection}{Q14.2 Answer}
+\subsection*{Q14.2 Answer}
 The given diagram represents a DFA comprising five states, \( s_0 \) to \( s_4 \), with \( s_0 \) as the start state and \( s_2 \), \( s_4 \) as accept states. The transitions are defined by the input symbols 'a' and 'b':
 \begin{itemize}
     \item From \( s_0 \), there is a transition to \( s_1 \) on input 'a' and a loop on 'b'.
@@ -493,21 +513,26 @@ This DFA accepts strings that end with 'a' leading to \( s_2 \) or strings with 
     \includegraphics[width=15cm]{1.png}
 \end{center}
 \newpage
+\addcontentsline{toc}{subsection}{Q14.3}
 \subsection*{Q14.3}
 Let \( L_1L_2 \) be the set of strings of 0's and 1's that both start and end with a 0.
 \\ Let \( L_1 \cup L_2 \) be the set of strings of 0's and 1's that start with a 0 or end with a 0 (or both).
 \\ Then the language \( (L_1 \cup L_2)^* \) is the set of strings of 0's and 1's that start with a 0 or end with a 0 (or both) or that contain 00.
 \newpage
-\subsection*{14.3 Answer}
+\addcontentsline{toc}{subsection}{Q14.3 Answer}
+\subsection*{Q14.3 Answer}
 \begin{center}
     \includegraphics[width=10cm]{2.png}
 \end{center}
 \newpage
+\addcontentsline{toc}{subsection}{Q14.4}
 \subsection*{Q14.4}
 TODO: DFA Simplification question
 \newpage
-\subsection*{14.4 Answer}
+\addcontentsline{toc}{subsection}{Q14.4 Answer}
+\subsection*{Q14.4 Answer}
 \newpage
+\addcontentsline{toc}{subsection}{Q14.5}
 \subsection*{Q14.5}
 Convert the NFA below into a DFA using the subset construction. This should be done by:
 \begin{itemize}
@@ -521,7 +546,8 @@ Provide the transition table for the DFA.
     \includegraphics[width=12cm]{3.png}
 \end{center}
 \newpage
-\subsection*{14.5 Answer}
+\addcontentsline{toc}{subsection}{Q14.5 Answer}
+\subsection*{Q14.5 Answer}
 Each state of the DFA is a set of states of the NFA. The DFA's initial state, $S_0$, is the epsilon-closure of the NFA's initial state, which includes states $\{0, 1, 3\}$.
 \[\varepsilon\text{-closure}\{0\} = \{0, 1, 3\} = S_0\]
 \begin{center}
@@ -533,13 +559,15 @@ The final diagram is :
     \includegraphics[width=12cm]{5.png}
 \end{center}
 \newpage
+\addcontentsline{toc}{subsection}{Q14.6}
 \subsection*{Q14.6}
 Determining the transition from state \( S_2 \) on inputs \( a \) and \( b \) is straightforward; from the empty set of states, there are no transitions in the NFA. In the DFA, this is represented by a transition from the empty set back to itself.
 \begin{center}
     \includegraphics[width=12cm]{6.png}
 \end{center}
 \newpage
-\subsection*{14.6 Answer}
+\addcontentsline{toc}{subsection}{Q14.6 Answer}
+\subsection*{Q14.6 Answer}
 \begin{center}
     \includegraphics[width=12cm]{7.png}
 \end{center}
@@ -550,11 +578,13 @@ Determining the transition from state \( S_2 \) on inputs \( a \) and \( b \) is
     \includegraphics[width=12cm]{9.png}
 \end{center}
 \newpage
+\addcontentsline{toc}{subsection}{Q14.7}
 \subsection*{Q14.7}
 Let $L^R$ be any arbitrary regular language. Let the language $L^R = {w^R : w \in L}$ be the reversal of L.
 Show that $L^R$ is regular.
 \newpage
-\subsection*{14.7 Answer}
+\addcontentsline{toc}{subsection}{Q14.7 Answer}
+\subsection*{Q14.7 Answer}
 Since we know that $L$ is regular, we know that there exists some DFA or equivalent NFA which accepts $L$. Without loss of generality, we can
 assume that there exists only start or end state (If a DFA had multiple accepting states, you could eliminate them down to just one 
 by redirecting all of the arrows going into other accepting states into a single accepting state, and eliminating the redundant accepting
@@ -562,12 +592,14 @@ states). Then we can construct a DFA or equivalent NFA which accepts $L^R$ by ma
 a start state, and reversing every state transition (reversing the "arrows"). Then we have a machine that traverses backwards over every
 string in $L$, and have thus constructed a DFA for $L^R$. Since there exists a DFA / NFA for $L^R$, we know that $L^R$ is regular.
 \newpage
+\addcontentsline{toc}{subsection}{Q14.8}
 \subsection*{Q14.8}
-For $\sigma=\{a,b,c,d\}$, give a regular expression that captures all strings that use their letters in reverse alphabetical order, but use at most three of the four possible letters.
+For $\Sigma=\{a,b,c,d\}$, give a regular expression that captures all strings that use their letters in reverse alphabetical order, but use at most three of the four possible letters.
 \\ Note: The strings themselves can be longer than 3 letters long, since letters can repeat.
  Draw an NFA that captures the regular expression from above.
 \newpage
-\subsection*{14.8 Answer}
+\addcontentsline{toc}{subsection}{Q14.8 Answer}
+\subsection*{Q14.8 Answer}
 The regular expression that captures the above language is:
 \[(d^*c^*b^*)|(d^*b^*a^*)|(d^*c^*a^*)|(c^*b^*a^*)\]
 We will construct this NFA step by step. Initially, consider the NFA for \( a^* \) as follows:
@@ -584,7 +616,8 @@ Now we can combine the components to construct the overall NFA.
     \includegraphics[width=9cm]{11.png}
 \end{center}
 \newpage
-\subsection{USEFUL RESOURCES FOR AUTOMATA}
+\addcontentsline{toc}{subsection}{Additional Resources}
+\subsection*{Additional Resourches for Finite Automata}
 \begin{enumerate}
     \item \href{https://www.youtube.com/watch?v=gjDPTy6fwbk}{Myhill Nerode}
     \item \href{https://www.youtube.com/watch?v=7W2lSrt8r-0&t=703s}{DFA Minimization}
@@ -592,35 +625,31 @@ Now we can combine the components to construct the overall NFA.
     \item \href{https://www.youtube.com/watch?v=yXLZ9JbvEEg}{Lambda/Epsilon NFA to NFA}
 \end{enumerate}
 \newpage
+\addcontentsline{toc}{section}{Chapter 15: Formal Language Theory}
 \section*{Chapter 15: Formal Language Theory}
+\addcontentsline{toc}{subsection}{Q15.1}
 \subsection*{Q15.1}
 Let L be a language that is Turing Recognizable by some Turing Machine. Let L' be the language $\Sigma^* - L$,
 and let that language also be Turing Recognizable by some other Turing Machine. Prove that L is Turing Decidable.
 (Hint: Recall that a single-tape Turing Machine can be used to simulate a multi-tape Turing Machine)
 \newpage
-\subsection*{15.1 Answer}
+\addcontentsline{toc}{subsection}{Q15.1 Answer}
+\subsection*{Q15.1 Answer}
 We know this to be true by the TR / TD Theorem. But for a rigorous proof, recall that a multi-tape Turing Machine can be simulated by
 a single-tape Turing Machine. Then we will construct a multi-tape Turing Machine which runs the Turing Machines for L and L' in parallel. One of these
 is guaranteed to terminate, since $L + L' = \Sigma^*$. If, on any given string, the Turing Machine that recognizes L terminates, 
 we know that string is in L. If the Turing Machine that recognizes L' terminates, we know that string is not in L. Then here we have
 constructed a Turing Machine that always decides whether or not a string is in L, and so L is Turing Decidable.
 \newpage
-\section*{USEFUL RESOURCES FOR FORMAL LANGUAGE THEORY}
+\addcontentsline{toc}{subsection}{Additional Resources}
+\subsection*{Additional Resources for Formal Language Theory}
 \begin{enumerate}
     \item \href{https://www.youtube.com/watch?v=-ZS_zFg4w5k}{Turing Machines Visualized}
     \item \href{https://www.youtube.com/watch?v=sNWC1Zz6qcg}{TR / TD}
     \item \href{https://www.youtube.com/watch?v=VyHbd6sx5Po}{Halting Problem}
     \item \href{https://www.youtube.com/watch?v=SV57Yv8BXBc&list=PLhqug0UEsC-IDomfNsn8e3neoy34o8oye}{Theory of Computation Playlist}
+	\item https://www.geeksforgeeks.org/conversion-from-nfa-to-dfa/ 
+	\item PS-1-SOL.PDF, accessed from \url{https://engineering.purdue.edu/~milind/ece468/2015fall/ps-1-sol.pdf}
+	\item Rabin-Scott subset construction, Louden
 \end{enumerate}
-\newpage
-\section*{Additional Resources}
-\begin{enumerate}
-\item Discrete Mathematics with Applications, Third Edition, by Susanna S. Epp
-\item Discrete and Combinatorial Mathematics: An Applied Introduction, Fifth Edition, by Ralph P. Grimaldi, Rose-Hulman Institute of Technology
-
-\item https://www.geeksforgeeks.org/conversion-from-nfa-to-dfa/ 
-\item PS-1-SOL.PDF, accessed from \url{https://engineering.purdue.edu/~milind/ece468/2015fall/ps-1-sol.pdf}
-\item Rabin-Scott subset construction, Louden
-\end{enumerate}
-
 \end{document}
