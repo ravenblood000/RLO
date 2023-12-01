@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.21)  30 NOV 2023 21:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.21)  1 DEC 2023 17:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -545,14 +545,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/ajyeu/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 168.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 177.
  (C:\Users\ajyeu\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 168.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 177.
  [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27]
-Overfull \hbox (30.02905pt too wide) in paragraph at lines 289--299
+Overfull \hbox (30.02905pt too wide) in paragraph at lines 298--308
 \OT1/cmr/bx/n/10 Inductive step\OT1/cmr/m/n/10 : Now sup-pose we have a set of $\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + 1$ stu-dents, la-beled $\OML/cmm/m/it/10 s[]$ \OT1/cmr/m/n/10 through $\OML/cmm/m/it/10 s[]$\OT1/cmr/m/n/10 : $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 s[]; s[]; s[]; :::; s[]; s[]; s[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 . 
  []
 
@@ -560,87 +560,93 @@ Overfull \hbox (30.02905pt too wide) in paragraph at lines 289--299
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 338.
+(amsmath)                 on input line 347.
 
-[34] [35] [36] [37] [38] [39]
-<Screenshot 2023-11-21 143618.png, id=306, 258.36525pt x 380.01974pt>
+[34]
+<UCS_question_graph.png, id=267, 278.2395pt x 139.722pt>
+File: UCS_question_graph.png Graphic file (type png)
+<use UCS_question_graph.png>
+Package pdftex.def Info: UCS_question_graph.png  used on input line 372.
+(pdftex.def)             Requested size: 278.23882pt x 139.72165pt.
+ [35 <./UCS_question_graph.png>] [36] [37] [38] [39]
+<Screenshot 2023-11-21 143618.png, id=318, 258.36525pt x 380.01974pt>
 File: Screenshot 2023-11-21 143618.png Graphic file (type png)
 <use Screenshot 2023-11-21 143618.png>
-Package pdftex.def Info: Screenshot 2023-11-21 143618.png  used on input line 434.
+Package pdftex.def Info: Screenshot 2023-11-21 143618.png  used on input line 465.
 (pdftex.def)             Requested size: 170.71652pt x 251.10373pt.
  [40 <./Screenshot 2023-11-21 143618.png>] [41]
-<1.png, id=319, 410.13225pt x 127.677pt>
+<1.png, id=330, 410.13225pt x 127.677pt>
 File: 1.png Graphic file (type png)
 <use 1.png>
-Package pdftex.def Info: 1.png  used on input line 451.
+Package pdftex.def Info: 1.png  used on input line 482.
 (pdftex.def)             Requested size: 426.79134pt x 132.86472pt.
  [42 <./1.png>] [43]
-<2.png, id=332, 202.356pt x 112.0185pt>
+<2.png, id=343, 202.356pt x 112.0185pt>
 File: 2.png Graphic file (type png)
 <use 2.png>
-Package pdftex.def Info: 2.png  used on input line 461.
+Package pdftex.def Info: 2.png  used on input line 492.
 (pdftex.def)             Requested size: 284.52756pt x 157.51534pt.
  [44 <./2.png>] [45] [46]
-<3.png, id=349, 316.18124pt x 139.11975pt>
+<3.png, id=360, 316.18124pt x 139.11975pt>
 File: 3.png Graphic file (type png)
 <use 3.png>
-Package pdftex.def Info: 3.png  used on input line 479.
+Package pdftex.def Info: 3.png  used on input line 510.
 (pdftex.def)             Requested size: 341.43306pt x 150.2407pt.
  [47 <./3.png>]
-<4.png, id=356, 325.215pt x 167.4255pt>
+<4.png, id=367, 325.215pt x 167.4255pt>
 File: 4.png Graphic file (type png)
 <use 4.png>
-Package pdftex.def Info: 4.png  used on input line 486.
+Package pdftex.def Info: 4.png  used on input line 517.
 (pdftex.def)             Requested size: 341.43306pt x 175.78917pt.
-<5.png, id=357, 332.442pt x 215.00325pt>
+<5.png, id=368, 332.442pt x 215.00325pt>
 File: 5.png Graphic file (type png)
 <use 5.png>
-Package pdftex.def Info: 5.png  used on input line 491.
+Package pdftex.def Info: 5.png  used on input line 522.
 (pdftex.def)             Requested size: 341.43306pt x 220.81935pt.
  [48 <./4.png> <./5.png>]
-<6.png, id=365, 295.70474pt x 145.7445pt>
+<6.png, id=376, 295.70474pt x 145.7445pt>
 File: 6.png Graphic file (type png)
 <use 6.png>
-Package pdftex.def Info: 6.png  used on input line 497.
+Package pdftex.def Info: 6.png  used on input line 528.
 (pdftex.def)             Requested size: 341.43306pt x 168.29204pt.
  [49 <./6.png>]
-<7.png, id=373, 344.487pt x 207.77625pt>
+<7.png, id=384, 344.487pt x 207.77625pt>
 File: 7.png Graphic file (type png)
 <use 7.png>
-Package pdftex.def Info: 7.png  used on input line 502.
+Package pdftex.def Info: 7.png  used on input line 533.
 (pdftex.def)             Requested size: 341.43306pt x 205.94322pt.
-<8.png, id=374, 340.8735pt x 213.79875pt>
+<8.png, id=385, 340.8735pt x 213.79875pt>
 File: 8.png Graphic file (type png)
 <use 8.png>
-Package pdftex.def Info: 8.png  used on input line 505.
+Package pdftex.def Info: 8.png  used on input line 536.
 (pdftex.def)             Requested size: 341.43306pt x 214.16685pt.
-<9.png, id=375, 321.6015pt x 131.89275pt>
+<9.png, id=386, 321.6015pt x 131.89275pt>
 File: 9.png Graphic file (type png)
 <use 9.png>
-Package pdftex.def Info: 9.png  used on input line 508.
+Package pdftex.def Info: 9.png  used on input line 539.
 (pdftex.def)             Requested size: 341.43306pt x 140.02701pt.
  [50 <./7.png> <./8.png> <./9.png>] [51] [52] [53]
-<10.png, id=399, 69.861pt x 54.80475pt>
+<10.png, id=410, 69.861pt x 54.80475pt>
 File: 10.png Graphic file (type png)
 <use 10.png>
-Package pdftex.def Info: 10.png  used on input line 533.
+Package pdftex.def Info: 10.png  used on input line 564.
 (pdftex.def)             Requested size: 113.81102pt x 89.28409pt.
-<11.png, id=400, 158.39175pt x 70.46326pt>
+<11.png, id=411, 158.39175pt x 70.46326pt>
 File: 11.png Graphic file (type png)
 <use 11.png>
-Package pdftex.def Info: 11.png  used on input line 537.
+Package pdftex.def Info: 11.png  used on input line 568.
 (pdftex.def)             Requested size: 256.0748pt x 113.9305pt.
 File: 11.png Graphic file (type png)
 <use 11.png>
-Package pdftex.def Info: 11.png  used on input line 542.
+Package pdftex.def Info: 11.png  used on input line 573.
 (pdftex.def)             Requested size: 256.0748pt x 113.9305pt.
  [54 <./10.png> <./11.png>] [55] [56] [57] [58]
-Overfull \hbox (6.39873pt too wide) in paragraph at lines 577--578
+Overfull \hbox (6.39873pt too wide) in paragraph at lines 608--609
 []\OT1/cmr/m/n/10 Discrete and Com-bi-na-to-rial Math-e-mat-ics: An Ap-plied In-tro-duc-tion, Fifth Edi-tion, by Ralph P. Grimaldi,
  []
 
 
-Overfull \hbox (25.57564pt too wide) in paragraph at lines 580--581
+Overfull \hbox (25.57564pt too wide) in paragraph at lines 611--612
 []\OT1/cmr/m/n/10 PS-1-SOL.PDF, ac-cessed from []$\OT1/cmtt/m/n/10 https : / / engineering . purdue . edu / []milind / ece468 / 2015fall / ps-[]1-[]sol .
  []
 
@@ -649,17 +655,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: FA7762A07A93383DD003CECAB154D50B;202.
  ) 
 Here is how much of TeX's memory you used:
- 21143 strings out of 476331
- 395189 string characters out of 5787765
+ 21157 strings out of 476331
+ 395439 string characters out of 5787765
  1860660 words of memory out of 5000000
- 41039 multiletter control sequences out of 15000+600000
+ 41045 multiletter control sequences out of 15000+600000
  521105 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,89p,723b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ajyeu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/ajyeu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (59 pages, 590243 bytes).
+Output written on main.pdf (59 pages, 609717 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 185 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 585 PDF objects out of 1000 (max. 8388607)
+ 192 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

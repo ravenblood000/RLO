@@ -21,7 +21,16 @@
     \textbf{Please Fill Out Our Feedback Form: \href{https://forms.gle/1ieupiHHHSuTEjXe9}{https://forms.gle/1ieupiHHHSuTEjXe9}}
 \end{center}
 
-
+\section*{NOTES ON INTENDED USE}
+We hope you find this study guide useful, however, we would like to make a few notes on its intended use. 
+\begin{center}
+    \begin{enumerate}
+        \item This study guide is not intended to be exhaustive. Its intended purpose is for you to ascertain whether or not you have a basic understanding of each topic. PLEASE USE OTHER RESOURCES (Lecture, Past Exams, etc.) TO STUDY FOR THE FINAL.
+        \item This resource was made by graduate students, and therefore may not necessarily reflect the level of difficulty that you will encounter on exams.
+        \item Try and use this resource first to gauge whether or not you understand a certain topic. Fill in any gaps in your knowledge, and then see if that helps your performance on practice exams.  
+    \end{enumerate}
+    
+\end{center}
 \section*{Chapter 1: Sets and Predicate Logic}
 \subsection*{Q1.1}
 Solve the following syllogism. Report the answer as a logical implication, as well as a naturally-spoken English sentence.
@@ -85,7 +94,7 @@ Complete a deductive sequence proof based on the following propositions:
 Your answer should either be a conjunction of all of the variables p,q,r,s,t which enumerates their
 truth values, or you may explicitly state the truth value of each variable.
 \newpage
-\subsection*{1,3 Answer}
+\subsection*{1.3 Answer}
 \begin{enumerate}
     \item Assume $\lnot p$
     \item q (Premise 1, right separation)
@@ -339,6 +348,39 @@ First, we must find out how many possible edges can exist in an undirected graph
 \end{itemize}
 Now that we know that there are $\frac{n(n-1)}{2}$ possible edges, we can think of these edges as being a set of edges, and each possible graph on $n$ nodes having some subset of those edges. To figure out how many different graphs are possible, we must figure out how many possible subsets there are for a set with $\frac{n(n-1)}{2}$ edges. This is the same as finding the size of the power set of the set of edges, which is $2^{\frac{n(n-1)}{2}}$.
 \newpage
+
+\subsection*{Q9.2}
+Develop a pseudocode method for a recurisve implementation of DFS.
+\subsection*{9.2 Answer}
+\begin{verbatim}
+    DFS-Recursive(Graph, start):
+    visited = set()
+    Recursive-DFS(start, visited)
+
+Recursive-DFS(node, visited):
+    if node is not visited:
+        visit node
+        add node to visited set
+        for each neighbor of node:
+            if neighbor is not visited:
+                Recursive-DFS(neighbor, visited)
+\end{verbatim}
+
+\subsection*{Q9.3}
+SOURCE: UW Madison \href{https://pages.cs.wisc.edu/~dyer/cs540/exams/exam1-f19-sol.pdf}{https://pages.cs.wisc.edu/~dyer/cs540/exams/exam1-f19-sol.pdf}
+
+\includegraphics{UCS_question_graph.png}
+
+Consider the following graph. S is a start state and G1 and G2 are end states. Assume that nodes are searched in alphabetical order. Conduct a BFS and UCS on the graph.
+What path does BFS return and what is its cost? What path does UCS return and what is its cost? Produce the overall
+results of both search methods as a rigorous proof.
+
+\subsection*{9.3 Answer}
+BFS returns the path from S to G1 with a cost of 7. UCS returns the path from S to A to C to G2 with a cost of 3. BFS will push all the neighboring nodes
+from S, but terminate upon finding that G1 is a goal state and is a neighbor of S. UCS will first check from S to A and B, being that their cost is 1.
+Then, it will add the path from S to A to C, because its cost is 2. It will add the paths from S to B to G2 and S to B to C, but those have costs higher
+than the path from S to A to C. Resuming from S to A to C, it will add the path S to A to C to G2, which will have the lowest cost of any other paths, 
+and then will return that path with cost of 3. 
 \subsection*{USEFUL RESOURCES FOR GRAPHS AND TREES}
 \begin{enumerate}
     \item \href{https://www.youtube.com/watch?v=zaBhtODEL0w}{DFS and BFS}
