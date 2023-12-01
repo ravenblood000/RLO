@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
-
+\usepackage{hyperref}
 \title{CS 250 Course Study Guide}
 \author{Sarmistha Sarna Gomasta, Kyla Levin, Alexander Yeung}
 \date{Fall 2023}
@@ -17,6 +17,10 @@
 \begin{document}
 
 \maketitle
+\begin{center}
+    \textbf{Please Fill Out Our Feedback Form: \href{https://forms.gle/1ieupiHHHSuTEjXe9}{https://forms.gle/1ieupiHHHSuTEjXe9}}
+\end{center}
+
 
 \section*{Chapter 1: Sets and Predicate Logic}
 \subsection*{Q1.1}
@@ -102,6 +106,16 @@ product of two rationals is always rational.
 Assume to the contrary, $\exists s$ such that $s = r + i$ where $r \in \mathbb{Q}$, the rational numbers, and $i \notin \mathbb{Q}$, or i is irrational.
 Well, then $i = s - r$. But we know that the difference between two rational numbers is always rational. Then i must be a rational number. But this is a contradiction
 because we assumed i to be irrational! 
+\newpage
+\subsection*{USEFUL RESOURCES FOR SETS AND PREDICATE LOGIC}
+\begin{enumerate}
+    \item \href{https://www.youtube.com/watch?v=A2k3ulOJ3u4}{Translating Statements to Propositional Logic} 
+    \item \href{https://www.youtube.com/watch?v=A3Ffwsnad0k&list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz}{Excellent Discrete Math Playlist}
+    \item \href{https://www.youtube.com/watch?v=6o1kLNEE-d4&list=PLF_J2w5w0Z3E7jZGz-23P6WrKxokXBkHC}{Playlist Containing Many Worked Out Deductive Proofs}
+    \item \href{https://www.youtube.com/watch?v=CpW0ZJ7i0oc}{MIT Video of Proof by Contradiction}
+    \item \href{https://www.youtube.com/watch?v=0YqZIHFmVzg}{Proof by Contrapositive Intro}
+    \item \href{https://www.youtube.com/watch?v=8DW0K3mnc-0}{Rules of Inference Video}
+\end{enumerate}
 \newpage
 \section*{Chapter 2: Quantifiers and Relations}
 \subsection*{2.1}
@@ -192,6 +206,17 @@ b) Consider \( a = 0.1 \). Then
 
 In fact (ii) is false for all \( 0 < a < 1 \), since \( \lfloor 1/a \rfloor = 0 \) for all such values of \( a \). In the case of (i), when \( 0 < a \leq 0.5 \), it follows that \( \lfloor a/a \rfloor \geq 2 \) and \( \lfloor 1/a \rfloor \geq 2 \) not equal to \( f \). However, for \( 0.5 < a < 1 \), \( \lfloor a/a \rfloor = 1/a \) where \( 1 < 1/a < 2 \), and so \( \lfloor a/a \rfloor = 1 \) for \( 0.5 < a < 1 \).
 \newpage
+\subsection*{USEFUL RESOURCES FOR QUANTIFIERS AND RELATIONS}
+\begin{enumerate}
+    \item \href{https://www.youtube.com/watch?v=tyDKR4FG3Yw&list=PLDDGPdw7e6Ag1EIznZ-m-qXu4XX3A0cIz}{Set Theory Playlist}
+    \item \href{https://www.youtube.com/watch?v=ZgcTX16borA}{Equivalence Relations and Equivalence Classes Explained}
+    \item \href{https://www.youtube.com/watch?v=bZred_Ksz2k&t=6s}{Bijective, Injective, Surjective Explained}
+    \item \href{https://www.youtube.com/watch?v=GJpezCUMOxA}{Existential and Universal Quantifiers Explained}
+    \item \href{https://www.youtube.com/watch?v=q1rKFGSiZE8}{Negating Quantifiers}
+    \item \href{https://www.youtube.com/watch?v=jLVKV5LJjaw}{Negating Multiple Quantifiers}
+    \item \href{https://www.youtube.com/watch?v=6fwJj14O_TM}{Reflexive, Symmetric, Transitive}
+\end{enumerate}
+\newpage
 \section*{Chapter 3: Number Theory}
 \subsection*{Q3.1 General Number Theory}
 Prove that for some relatively prime $a$ and $n$, multiplying all numbers in the set $\{1,2,...,n-2,n-1\}$ by $a$ will output a permutation of $\{1,2,...,n-2,n-1\}$.
@@ -253,6 +278,12 @@ x &= t_1 + t_2 + t_3 \pmod{105}\\
 \end{align*}
 However, since we want the smallest positive integer, \( x = 105 \pmod{105} \) gives \( x = 0 \). Therefore, we need to subtract \( N \) from \( 105 \) to find the smallest positive solution. So the corrected smallest positive integer solution is \( x = 105 - 105 = 0 \). This seems incorrect as 0 is not positive, we need to reevaluate the \( t_i \) terms to find the correct solution.
 \newpage
+\subsection*{USEFUL NUMBER THEORY RESOURCES}
+\begin{enumerate}
+    \item \href{https://www.youtube.com/watch?v=yHwneN6zJmU}{Euclid's Algorithm}
+    \item \href{https://www.youtube.com/watch?v=ru7mWZJlRQg&t=276s}{Chinese Remainder Theorem} 
+\end{enumerate}
+\newpage
 \section*{Chapter 4: Induction and Recursion}
 \subsection*{Q4.1}
 Explain the error in the following induction proof:
@@ -286,6 +317,14 @@ Suppose we have a recursively-defined function (much like a Fibonacci sequence) 
     \item $f_{n+1}=2^{n+1}+3^{n+1}$
 \end{itemize}
 \newpage
+\subsection*{USEFUL RESOURCES FOR INDUCTION AND RECURSION}
+\begin{enumerate}
+    \item \href{https://www.youtube.com/watch?v=IdTaA6iz3Mo&list=PL5KkMZvBpo5CnkA4bi7l6W62VPoYRbOEk&index=1}{Induction Playlist}
+    \item \href{https://www.youtube.com/watch?v=-vJhahLdmLI}{Strong Induction}
+    \item \href{https://www.youtube.com/watch?v=5Hn8vUE3cBQ}{Induction Visualization}
+    \item \href{https://www.youtube.com/watch?v=5RB4H_12wOs}{Recursively Defined Functions}
+\end{enumerate}
+\newpage
 \section*{Chapter 9: Graphs and Trees}
 \subsection*{Q9.1}
 How many different undirected graphs with $n$ nodes are possible? Assume that two graphs with $n$ nodes are "different" if they have different edges and give your answer as an expression of $n$.
@@ -299,6 +338,14 @@ First, we must find out how many possible edges can exist in an undirected graph
     \item Consider all $n$ nodes as a set. From this set, one can \textit{choose} any unordered pair of two nodes to form an edge. This is the definition of the \textit{choose} operation, and so there are $n\choose 2$ possible edges. This again is equivalent to $\frac{n(n-1)}{2}$ edges by combinatorial proof.
 \end{itemize}
 Now that we know that there are $\frac{n(n-1)}{2}$ possible edges, we can think of these edges as being a set of edges, and each possible graph on $n$ nodes having some subset of those edges. To figure out how many different graphs are possible, we must figure out how many possible subsets there are for a set with $\frac{n(n-1)}{2}$ edges. This is the same as finding the size of the power set of the set of edges, which is $2^{\frac{n(n-1)}{2}}$.
+\newpage
+\subsection*{USEFUL RESOURCES FOR GRAPHS AND TREES}
+\begin{enumerate}
+    \item \href{https://www.youtube.com/watch?v=zaBhtODEL0w}{DFS and BFS}
+    \item \href{https://www.youtube.com/watch?v=DgXR2OWQnLc&list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P}{Graph Theory Playlist}
+    \item \href{https://www.youtube.com/watch?v=dRMvK76xQJI}{Uniform Cost Search}
+    \item \href{https://www.youtube.com/watch?v=6TsL96NAZCo}{A* Search}
+\end{enumerate}
 \newpage
 \section*{Chapter 5: Regular Expressions}
 \subsection*{Q5.1}
@@ -322,6 +369,11 @@ Assume the alphabet $\sum=\{0,1\}$. If the English description is given, provide
     \\ For a binary string where 11 cannot occur, this could be any combination of 0's or 10's, either ending in a 1 or not: $(0+10)^*(1+\lambda)$
     \\ The formula is much the same for a binary string where 00 cannot occur: $(1+01)^*(0+\lambda)$
     \\ Concatenating the two together gives us the final string: $(0+10)^*(1+\lambda)(1+01)^*(0+\lambda)$
+\end{enumerate}
+\newpage
+\subsection*{USEFUL RESOURCES FOR REGULAR EXPRESSIONS}
+\begin{enumerate}
+    \item \href{https://www.youtube.com/playlist?list=PLBlnK6fEyqRgp46KUv4ZY69yXmpwKOIev}{Formal Language Theory Playlist}
 \end{enumerate}
 \newpage
 \section*{Chapter 14: Finite Automata}
@@ -490,6 +542,14 @@ Now we can combine the components to construct the overall NFA.
     \includegraphics[width=9cm]{11.png}
 \end{center}
 \newpage
+\subsection{USEFUL RESOURCES FOR AUTOMATA}
+\begin{enumerate}
+    \item \href{https://www.youtube.com/watch?v=gjDPTy6fwbk}{Myhill Nerode}
+    \item \href{https://www.youtube.com/watch?v=7W2lSrt8r-0&t=703s}{DFA Minimization}
+    \item \href{https://www.youtube.com/watch?v=VbR1mGdP99s}{Regular Expression to Automaton}
+    \item \href{https://www.youtube.com/watch?v=yXLZ9JbvEEg}{Lambda/Epsilon NFA to NFA}
+\end{enumerate}
+\newpage
 \section*{Chapter 15: Formal Language Theory}
 \subsection*{Q15.1}
 Let L be a language that is Turing Recognizable by some Turing Machine. Let L' be the language $\Sigma^* - L$,
@@ -503,7 +563,15 @@ is guaranteed to terminate, since $L + L' = \Sigma^*$. If, on any given string, 
 we know that string is in L. If the Turing Machine that recognizes L' terminates, we know that string is not in L. Then here we have
 constructed a Turing Machine that always decides whether or not a string is in L, and so L is Turing Decidable.
 \newpage
-\section*{Resources}
+\section*{USEFUL RESOURCES FOR FORMAL LANGUAGE THEORY}
+\begin{enumerate}
+    \item \href{https://www.youtube.com/watch?v=-ZS_zFg4w5k}{Turing Machines Visualized}
+    \item \href{https://www.youtube.com/watch?v=sNWC1Zz6qcg}{TR / TD}
+    \item \href{https://www.youtube.com/watch?v=VyHbd6sx5Po}{Halting Problem}
+    \item \href{https://www.youtube.com/watch?v=SV57Yv8BXBc&list=PLhqug0UEsC-IDomfNsn8e3neoy34o8oye}{Theory of Computation Playlist}
+\end{enumerate}
+\newpage
+\section*{Additional Resources}
 \begin{enumerate}
 \item Discrete Mathematics with Applications, Third Edition, by Susanna S. Epp
 \item Discrete and Combinatorial Mathematics: An Applied Introduction, Fifth Edition, by Ralph P. Grimaldi, Rose-Hulman Institute of Technology
