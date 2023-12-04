@@ -429,17 +429,14 @@ Suppose we have a recursively-defined function (much like a Fibonacci sequence) 
 \subsection*{Q4.3}
 \addcontentsline{toc}{subsection}{Q4.3}
 Suppose you are assembling trains. There are two types of train cars that you can use: one has a length of 1, the other has a length of 2. Trains are ordered sequences of train cars: for example, if a train has a total length of 3, then it could have been built using a length-2 car, followed by a length 1. Or a length 1 car, followed by a length 2. Or a length 1 car, followed by two more 1's.
-\\ Prove that for a train with a total length of $n$, there are $F_n$ number of different ways to construct the train, where $F_n$ is the $n$-th Fibonacci number.
-\\ As a reminder, $F_0=1$ and $F_1=1$ in this class.
+\\ Prove that for a train with a total length of $n\geq1$, there are $F_n$ number of different ways to construct the train, where $F_n$ is the $n$-th Fibonacci number.
+\\ As a reminder, $F_0=0$ and $F_1=1$ in this class.
 \newpage
 \subsection*{Q4.3 Answer}
 \addcontentsline{toc}{subsection}{Q4.3 Answer}
 \textbf{Base cases:}
-\\ $F_0=1$ This is true, since if the train has a length of 0, then there's only one possible way to construct it: no cars at all!
-\\ $F_1=1$ This is also true, since if the train has a length of 1, then there's only one possible way to construct it: a single length-1 car.
-\\ The above are the minimum number of base cases needed for this proof, but to illustrate more:
+\\ $F_1=1$ This is true, since if the train has a length of 1, then there's only one possible way to construct it: a single length-1 car.
 \\ $F_2=2$ If $n=2$, then this could be formed by $2$ or by $1+1$
-\\ $F_3=3$ As stated in the problem, if $n=3$, this could be formed by $2+1$, $1+2$, or $1+1+1$
 \\ \textbf{Inductive Hypothesis:} Assume that $F_n$ is the number of ways to construct a train of length $n$.
 \\ \textbf{Inductive Step:} Now consider building a train of length $n+1$. For the first car, you must choose between a 1-car and a 2-car. Consider each option individually:
 \\ Case 1: You choose to start with a 1-car. The rest of the train is now of length $n$, and the I.H. tells us that there are $F_n$ possible ways to construct this $n$-length train.
@@ -449,7 +446,7 @@ Suppose you are assembling trains. There are two types of train cars that you ca
 
 \subsection*{Q4.4}
 \addcontentsline{toc}{subsection}{Q4.4}
-Prove that $n^2-n$ is always even for all $n\in\mathbb{N}$.
+Prove by induction that $n^2-n$ is always even for all $n\in\mathbb{N}$.
 \newpage
 \subsection*{Q4.4 Answer}
 \addcontentsline{toc}{subsection}{Q4.4 Answer}
@@ -495,7 +492,7 @@ Now that we know that there are $\frac{n(n-1)}{2}$ possible edges, we can think 
 
 \subsection*{Q9.2}
 \addcontentsline{toc}{subsection}{Q9.2}
-Develop a pseudocode method for a recurisve implementation of DFS.
+Develop a pseudocode method for a recursive implementation of DFS.
 \newpage
 \subsection*{9.2 Answer}
 \addcontentsline{toc}{subsection}{Q9.2 Answer}
@@ -1009,17 +1006,17 @@ The final diagram is :
 
 \subsection*{Q14.5}
 \addcontentsline{toc}{subsection}{Q14.5}
-Let $L^R$ be any arbitrary regular language. Let the language $L^R = {w^R : w \in L}$ be the reversal of L.
+Let $L^R$ be any arbitrary regular language. Let the language $L^R = \{w^R : w \in L\}$ be the reversal of L.
 Show that $L^R$ is regular.
 \newpage
 \subsection*{Q14.5 Answer}
 \addcontentsline{toc}{subsection}{Q14.5 Answer}
-Since we know that $L$ is regular, we know that there exists some DFA or equivalent NFA which accepts $L$. Without loss of generality, we can
+Since we know that $L$ is regular, we know that there exists some DFA or equivalent $\lambda$-NFA which accepts $L$. Without loss of generality, we can
 assume that there exists only start or end state (If a DFA had multiple accepting states, you could eliminate them down to just one 
 by redirecting all of the arrows going into other accepting states into a single accepting state, and eliminating the redundant accepting
-states). Then we can construct a DFA or equivalent NFA which accepts $L^R$ by making the start state and accepting state, the accepting state
+states). Then we can construct a DFA or equivalent $\lambda$-NFA which accepts $L^R$ by making the start state and accepting state, the accepting state
 a start state, and reversing every state transition (reversing the "arrows"). Then we have a machine that traverses backwards over every
-string in $L$, and have thus constructed a DFA for $L^R$. Since there exists a DFA / NFA for $L^R$, we know that $L^R$ is regular.
+string in $L$, and have thus constructed a DFA for $L^R$. Since there exists a DFA / $\lambda$-NFA for $L^R$, we know that $L^R$ is regular.
 \newpage
 
 \subsection*{Q14.6}
@@ -1031,7 +1028,7 @@ For $\Sigma=\{a,b,c,d\}$, give a regular expression that captures all strings th
 \subsection*{Q14.6 Answer}
 \addcontentsline{toc}{subsection}{Q14.6 Answer}
 The regular expression that captures the above language is:
-\[(d^*c^*b^*)|(d^*b^*a^*)|(d^*c^*a^*)|(c^*b^*a^*)\]
+\[(d^*c^*b^*)+(d^*b^*a^*)+(d^*c^*a^*)+(c^*b^*a^*)\]
 We will construct this NFA step by step. Initially, consider the NFA for \( a^* \) as follows:
 \begin{center}
     \includegraphics[width=4cm]{10.png}
