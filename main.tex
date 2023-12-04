@@ -239,21 +239,25 @@ Let \( A, B, C, D \) be nonempty sets.
 
 \subsection*{Q2.4}
 \addcontentsline{toc}{subsection}{Q2.4}
-Determine whether each of the following statements is true or false. If the statement is false, provide a counterexample.
-\begin{enumerate}
-    \item[a)] \( |a| = [-a] \) for all \( a \in \mathbb{Z} \).
-    \item[b)] \( |a| = [a] \) for all \( a \in \mathbb{R} \).
-    \item[c)] \( |a| = [a] - 1 \) for all \( a \in \mathbb{R} \setminus \mathbb{Z} \).
-    \item[d)] \( [a] = [-a] \) for all \( a \in \mathbb{R} \).
+Determine whether each of the following statements is true or false. If it is true, give a short proof. If it is false, give an example.
+\begin{enumerate}[label=\alph*.]
+    \item If \( x \in A \) and \( A \in B \) (not a typo), then \( x \in B \).
+    \item If \( A \subseteq B \) and \( B \in C \), then \( A \in C \).
+    \item If \( A \subseteq B \) and \( B \subseteq C \), then \( A \subseteq C \).
+    \item If \( A \not\subset B \) and \( B \not\subseteq C \), then \( A \not\subseteq C \).
+    \item If \( x \in A \) and \( A \not\subseteq B \), then \( x \in B \).
+    \item If \( A \subseteq B \) and \( x \notin B \), then \( x \notin A \).
 \end{enumerate}
 \newpage
 \subsection*{Q2.4 Answer}
 \addcontentsline{toc}{subsection}{Q2.4 Answer}
-\begin{enumerate}
-    \item[(a)] True
-    \item[(b)] False: Let \( a = 1.5 \). Then \( \lfloor 1.5 \rfloor = 1 \neq 2 = \lfloor a \rfloor \)
-    \item[(c)] True
-    \item[(d)] False: Let \( a = 1.5 \). Then \( \lfloor -a \rfloor = -2 \neq -1 = \lfloor -a \rfloor \).
+\begin{enumerate}[label=\alph*.]
+\item \textbf{False.} Let \( A = \{1, 2\} \) and \( B = \{ \{1, 2\}, \{3\}\} \). Now, consider $x=2$. The premises are met since \( 2 \in \{1, 2\} \) and \( \{1, 2\} \in \{ \{1, 2\},\{3\}\} \). However, \( 2 \notin \{\{1, 2\},\{3\}\} \).
+\item \textbf{False.} Let \( A = \{2\} \), \( B = \{0, 2\} \), and \( C = \{\{1\}, \{0, 2\}, \{2, 3\}\} \). The premises are met since $A\subseteq B$ and $B\in C$. However, \( A \notin C \).
+\item \textbf{True.} Assume \( A \subseteq B \) and \( B \subseteq C \). Let there be some $x$ such that \( x \in A \). Because $A\subseteq B$, this implies that \( x \in B \). Because $B\subseteq C$, this implies that \( x \in C \). Therefore, for any arbitrary element $x\in A$, we can conclude that $x\in C$ and therefore \( A \subseteq C \).
+\item \textbf{False.} $A$ being dissimilar from $B$ and $B$ being dissimilar from $C$ does not imply that $A$ and $C$ are dissimilar. Let \( A = \{1, 2\} \), \( B = \{0, 6, 8\} \), and \( C = \{0, 1, 2, 6, 9\} \). Neither $A\subseteq B$ or $B\subseteq C$, however, \( A \subseteq C \).
+\item \textbf{False.} Let \( A = \{3, 5, 7\} \) and \( B = \{3, 4, 6\} \). Now, let $x=5$. \( 5 \in A \) and \( A \nsubseteq B \). However, \( 5 \notin B \).
+\item \textbf{True.} Assume \( A \subseteq B \) and let there be some $x$ such that \( x \notin B \). For the sake of contradiction, assume \( x \in A \). Then because $A\subseteq B$, \( x \in B \), which is a contradiction as \( x \notin B \). Therefore, \( x \notin A \).
 \end{enumerate}
 \newpage
 
@@ -343,12 +347,10 @@ The GCD of 473 and 47 is 1 since the algorithm ends with a remainder of 1. Since
 \addcontentsline{toc}{subsection}{Q3.3}
 Find the smallest integer $x$ such that:
 
-\[
 \begin{align*}
 x &\equiv 3 \ (\text{mod}\ 17) \\
 x &\equiv 5 \ (\text{mod}\ 19)
 \end{align*}
-\]
 
 \newpage
 \subsection*{Q3.3 Answer}
@@ -361,15 +363,11 @@ $M \equiv 1 \ (\text{mod}\ 17)$, so $M^{-1} \equiv 1 \ (\text{mod}\ 17)$, where 
 $M \equiv 1 \ (\text{mod}\ 19)$, so $M^{-1} \equiv 1 \ (\text{mod}\ 19)$, where one solution is $M^{-1} = 1$.
 
 Now, we find $x$:
-
-\[
 \begin{align*}
 x &= (3 \times 19 \times 1) + (5 \times 17 \times 1) \\
 x &= 57 + 85 \\
 x &= 142
 \end{align*}
-\]
-
 Therefore, the integer $x$ that satisfies both congruences is $x = 142$.
 
 \newpage
@@ -807,7 +805,7 @@ Since one criteria only cares about 0's being read in, and the other only cares 
 
 \subsection*{Q14.2}
 \addcontentsline{toc}{subsection}{Q14.2}
-Draw a DFA that accepts the language consisting of the set of all strings of \( x \)'s and \( y \)'s that start with \( xy \) or \( yy \) followed by any string of \( x \)'s and \( y \)'s.
+Construct a DFA that accepts a language consisting of all strings over the alphabet \(\Sigma=\{a, b\}\) that either end with the letter 'a' or contain an even number of 'b's.
 \newpage
 \subsection*{Q14.2 Answer}
 \addcontentsline{toc}{subsection}{Q14.2 Answer}
@@ -975,32 +973,87 @@ The DFA minimization algorithm begins by separating the nodes into accept states
 
 \subsection*{Q14.4}
 \addcontentsline{toc}{subsection}{Q14.4}
-Convert the NFA below into a DFA using the subset construction. This should be done by:
-\begin{itemize}
-  \item Creating DFA states as subsets of the NFA states.
-  \item Defining the start state of the DFA as the epsilon-closure of NFA state 0.
-  \item Including any subset containing NFA state 3 as accept states in the DFA.
-  \item Determining the DFA transitions for each symbol from each state subset.
-\end{itemize}
-Provide the transition table for the DFA.
+Convert the following NFA to a DFA:
 \begin{center}
-    \includegraphics[width=12cm]{3.png}
+    \includegraphics[width=12cm]{13.png}
 \end{center}
 \newpage
 \subsection*{Q14.4 Answer}
 \addcontentsline{toc}{subsection}{Q14.4 Answer}
-Each state of the DFA is a set of states of the NFA. The DFA's initial state, $S_0$, is the epsilon-closure of the NFA's initial state, which includes states $\{0, 1, 3\}$.
-\[\varepsilon\text{-closure}\{0\} = \{0, 1, 3\} = S_0\]
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+State / Alphabet & 0 & 1 \\ \hline
+$\rightarrow q_0$ & $q_0$ & $q_1, *q_2$ \\
+$q_1$ & $q_1, *q_2$ & $*q_2$ \\
+$*q_2$ & $q_0, q_1$ & $q_1$ \\
+\end{tabular}
+\caption{Transition table for the given NFA}
+\end{table}
+\textbf{Step 1}
+\begin{enumerate}
+\item Let $Q'$ be a new set of states of the Deterministic Finite Automata (DFA).
+\item Let $T'$ be a new transition table of the DFA.
+\end{enumerate}
+\textbf{Step 2}
+\\ Add transitions of start state $q_0$ to the transition table $T'$.
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+State / Alphabet & 0 & 1 \\ \hline
+$\rightarrow q_0$ & $q_0$ & $\{q_1, q_2\}$ \\
+\end{tabular}
+\caption{Partial transition table for DFA}
+\end{table}
+\\ \textbf{Step 3}
+\begin{enumerate}
+\item New state present in state $Q'$ is $\{q_1, q_2\}$.
+\item Add transitions for set of states $\{q_1, q_2\}$ to the transition table $T'$.
+\end{enumerate}
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+State / Alphabet & 0 & 1 \\ \hline
+$\rightarrow q_0$ & $q_0$ & $\{q_1, q_2\}$ \\
+$\{q_1, q_2\}$ & $\{q_0, q_1, q_2\}$ & $\{q_1, q_2\}$ \\
+\end{tabular}
+\caption{Extended transition table for DFA}
+\end{table}
+\textbf{Step 4}
+\begin{enumerate}
+\item New state present in state $Q'$ is $\{q_0, q_1, q_2\}$.
+\item Add transitions for set of states $\{q_0, q_1, q_2\}$ to the transition table $T'$.
+\end{enumerate}
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+State / Alphabet & 0 & 1 \\ \hline
+$\rightarrow q_0$ & $q_0$ & $\{q_1, q_2\}$ \\
+$\{q_1, q_2\}$ & $\{q_0, q_1, q_2\}$ & $\{q_1, q_2\}$ \\
+$\{q_0, q_1, q_2\}$ & $\{q_0, q_1, q_2\}$ & $\{q_1, q_2\}$ \\
+\end{tabular}
+\caption{Extended transition table for DFA}
+\end{table}
+\textbf{Step 5}
+\begin{enumerate}
+\item Since no new states are left to be added in the transition table $T'$, we stop.
+\item States containing $q_2$ as its component are treated as final states of the DFA.
+\end{enumerate}
+Finally, the transition table for Deterministic Finite Automata (DFA) is:
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+State / Alphabet & 0 & 1 \\ \hline
+$\rightarrow q_0$ & $q_0$ & $*\{q_1, q_2\}$ \\
+$*\{q_1, q_2\}$ & $*\{q_0, q_1, q_2\}$ & $*\{q_1, q_2\}$ \\
+$*\{q_0, q_1, q_2\}$ & $*\{q_0, q_1, q_2\}$ & $*\{q_1, q_2\}$ \\
+\end{tabular}
+\caption{Transition table for the DFA}
+\end{table}
 \begin{center}
-    \includegraphics[width=12cm]{4.png}
-\end{center}
-For input $a$, the transition from $S_0$ leads to a new DFA state, $S_1$, determined by the epsilon-closure of the set $\{1, 2\}$, resulting in the set $\{1, 2, 3\}$. For input $b$, the transition from $S_0$ leads to state $S_2$, which is the epsilon-closure of the set $\{3\}$, or $\{1, 3\}$. The DFA transitions from state $S_1$ on input $a$ lead to a sinking state, as there are no corresponding NFA transitions. Conversely, on input $b$, $S_1$ transitions to the previously established state $S_2$. The transitions from state $S_2$ on inputs $a$ and $b$ need to be determined following the same methodology, considering the epsilon-closures and transitions in the NFA.
-The final diagram is : 
-\begin{center}
-    \includegraphics[width=12cm]{5.png}
+    \includegraphics[width=12cm]{14.png}
 \end{center}
 \newpage
-
 \subsection*{Q14.5}
 \addcontentsline{toc}{subsection}{Q14.5}
 Let $L^R$ be any arbitrary regular language. Let the language $L^R = \{w^R : w \in L\}$ be the reversal of L.
@@ -1015,7 +1068,6 @@ states). Then we can construct a DFA or equivalent $\lambda$-NFA which accepts $
 a start state, and reversing every state transition (reversing the "arrows"). Then we have a machine that traverses backwards over every
 string in $L$, and have thus constructed a DFA for $L^R$. Since there exists a DFA / $\lambda$-NFA for $L^R$, we know that $L^R$ is regular.
 \newpage
-
 \subsection*{Q14.6}
 \addcontentsline{toc}{subsection}{Q14.6}
 For $\Sigma=\{a,b,c,d\}$, give a regular expression that captures all strings that use their letters in reverse alphabetical order, but use at most three of the four possible letters.
