@@ -358,17 +358,16 @@ x &\equiv 5 \ (\text{mod}\ 19)
 
 Let $M = 17 \times 19 = 323$ as the product of the moduli. Then find the modular inverses of $M$ modulo $17$ and $19$.
 
-$M \equiv 1 \ (\text{mod}\ 17)$, so $M^{-1} \equiv 1 \ (\text{mod}\ 17)$, where one solution is $M^{-1} = 1$.
-
-$M \equiv 1 \ (\text{mod}\ 19)$, so $M^{-1} \equiv 1 \ (\text{mod}\ 19)$, where one solution is $M^{-1} = 1$.
+17 and 19 are pairwise coprime, so we know that there will exist a solution to this
+system under the Chinese Remainder Theorem.
 
 Now, we find $x$:
 \begin{align*}
-x &= (3 \times 19 \times 1) + (5 \times 17 \times 1) \\
-x &= 57 + 85 \\
-x &= 142
+x \equiv (3 \times -8 \times 19) + (5 \times 9 \times 17)  (\text{mod} 323)\\
+x \equiv -456 + 765 (\text{mod} 323) \\
+x \equiv 309 (\text{mod} 323)
 \end{align*}
-Therefore, the integer $x$ that satisfies both congruences is $x = 142$.
+Therefore, the integer $x$ that satisfies both congruences is $x = 309$.
 
 \newpage
 
