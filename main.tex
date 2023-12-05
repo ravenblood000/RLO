@@ -60,14 +60,14 @@ Solve the following syllogism. Report the answer as a logical implication, as we
 \addcontentsline{toc}{subsection}{Q1.1 Answer}
 We will use the following variables: $D=\text{doctor recommends it},S=\text{sweet},A=\text{agrees with me},G=\text{good for dinner}$
 \begin{itemize}
-    \item This can be read as "If my doctor recommends it, then it's not very sweet." $D\rightarrow \neg S$
-    \item This can be read as "There is nothing such that if it agrees with me, then it's good for dinner." $A\rightarrow G$
-    \item This can be read as "If it's cake, then it's very sweet." $C\rightarrow S$
-    \item This can be read as "If it's good for dinner, then my doctor recommends it." $G\rightarrow D$
+    \item This can be read as ``If my doctor recommends it, then it's not very sweet." $D\rightarrow \neg S$
+    \item This can be read as ``There is nothing such that if it agrees with me, then it's good for dinner." $A\rightarrow G$
+    \item This can be read as ``If it's cake, then it's very sweet." $C\rightarrow S$
+    \item This can be read as ``If it's good for dinner, then my doctor recommends it." $G\rightarrow D$
 \end{itemize}
 $C\rightarrow S\rightarrow \neg D\rightarrow\neg G$
 \\ Transitively, $C\rightarrow\neg G$
-\\ In English, "If it's cake, then it's not good for dinner." Or, more naturally, "Cake is not good for dinner."
+\\ In English, ``If it's cake, then it's not good for dinner." Or, more naturally, ``Cake is not good for dinner."
 \newpage
 \addcontentsline{toc}{subsection}{Q1.2}
 \subsection*{Q1.2}
@@ -359,13 +359,19 @@ x &\equiv 5 \ (\text{mod}\ 19)
 Let $M = 17 \times 19 = 323$ as the product of the moduli. Then find the modular inverses of $M$ modulo $17$ and $19$.
 
 17 and 19 are pairwise coprime, so we know that there will exist a solution to this
-system under the Chinese Remainder Theorem.
+system under the Chinese Remainder Theorem. By Bezout's Identity, this solution will be:
 
-Now, we find $x$:
+$x = 17 \times 5 \times a + 19 \times 3 \times b$
+
+We can find a and b by running the extended Euclidian algorithm on 17 and 19
+
+\includegraphics{extended_euclidian.png}
+
+By the above table we see that: 
 \begin{align*}
-x \equiv (3 \times -8 \times 19) + (5 \times 9 \times 17)  (\text{mod} 323)\\
-x \equiv -456 + 765 (\text{mod} 323) \\
-x \equiv 309 (\text{mod} 323)
+x \equiv (17 \times 5 \times 9) + (19 \times 3 \times -8)  (\text{mod}~ 323)\\
+x \equiv -456 + 765 (\text{mod} ~323) \\
+x \equiv 309 (\text{mod}~ 323)
 \end{align*}
 Therefore, the integer $x$ that satisfies both congruences is $x = 309$.
 
@@ -470,7 +476,7 @@ Prove by induction that $n^2-n$ is always even for all $n\in\mathbb{N}$.
 
 \subsection*{Q9.1}
 \addcontentsline{toc}{subsection}{Q9.1}
-How many different undirected graphs with $n$ nodes are possible? Assume that two graphs with $n$ nodes are "different" if they have different edges and give your answer as an expression of $n$.
+How many different undirected graphs with $n$ nodes are possible? Assume that two graphs with $n$ nodes are ``different" if they have different edges and give your answer as an expression of $n$.
 \newpage
 \subsection*{Q9.1 Answer}
 \addcontentsline{toc}{subsection}{Q9.1 Answer}
@@ -491,16 +497,17 @@ Develop a pseudocode method for a recursive implementation of DFS.
 \subsection*{9.2 Answer}
 \addcontentsline{toc}{subsection}{Q9.2 Answer}
 \begin{verbatim}
-    DFS-Recursive(Graph, start):
+DFS-Recursive(Graph, start):
     visited = set()
-    Recursive-DFS(start, visited)
-Recursive-DFS(node, visited):
+    helper(start, visited)
+
+helper(node, visited):
     if node is not visited:
         visit node
         add node to visited set
         for each neighbor of node:
             if neighbor is not visited:
-                Recursive-DFS(neighbor, visited)
+                helper(neighbor, visited)
 \end{verbatim}
 \newpage
 
@@ -804,7 +811,7 @@ Since one criteria only cares about 0's being read in, and the other only cares 
 
 \subsection*{Q14.2}
 \addcontentsline{toc}{subsection}{Q14.2}
-Construct a DFA that accepts a language consisting of all strings over the alphabet \(\Sigma=\{a, b\}\) that either end with the letter 'a' or contain an even number of 'b's.
+Construct a DFA that accepts a language L consisting of all strings over the alphabet \(\Sigma=\{a, b\}\) that L = \{w: (w ends in aa) or (w ends in bb)\}
 \newpage
 \subsection*{Q14.2 Answer}
 \addcontentsline{toc}{subsection}{Q14.2 Answer}
@@ -816,7 +823,7 @@ The given diagram represents a DFA comprising five states, \( s_0 \) to \( s_4 \
     \item State \( s_3 \) transitions to \( s_1 \) on 'a' and to \( s_4 \) on 'b'.
     \item State \( s_4 \) has a loop on 'b'.
 \end{itemize}
-This DFA accepts strings that end with 'a' leading to \( s_2 \) or strings with an even number of 'b's leading to \( s_4 \).
+This DFA accepts strings in our above described language L
 \begin{center}
     \includegraphics[width=15cm]{1.png}
 \end{center}
