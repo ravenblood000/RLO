@@ -1143,7 +1143,7 @@ The NFA for \( d^*c^*b^* \) is constructed by chaining the NFAs for \( d^* \), \
 Extra care is taken when connecting the NFAs sequentially; the final states of the first NFA are connected to the start state of the subsequent NFA, and the final states are made non-final to ensure the correctness of the overall NFA. Although it is safe to keep all states final in this specific case, it is generally prudent not to do so in order to avoid errors in the construction of the NFA.
 Now we can combine the components to construct the overall NFA.
 \begin{center}
-    \includegraphics[width=9cm]{11.png}
+    \includegraphics[width=9cm]{12.png}
 \end{center}
 \newpage
 
